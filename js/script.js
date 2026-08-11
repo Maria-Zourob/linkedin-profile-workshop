@@ -327,6 +327,8 @@ const closeCompletion =
         "closeCompletion"
     );
 
+const giftSound =
+    document.getElementById("giftSound");
 
 // =========================================================
 // STATE
@@ -753,60 +755,55 @@ nextStepBtn.addEventListener(
 
 function updateProgress() {
 
-    const total =
-        steps.length;
+    const total = steps.length;
 
-    const completed =
-        completedSteps.length;
-
+    const completed = completedSteps.length;
 
     const percentage =
         Math.round(
-            (
-                completed /
-                total
-            ) * 100
+            (completed / total) * 100
         );
 
 
     progressBar.style.width =
         `${percentage}%`;
 
-
     progressText.textContent =
         `${percentage}%`;
-
 
     sidebarCounter.textContent =
         `${completed} / ${total}`;
 
 
     if (score) {
-
         score.textContent =
             percentage;
-
     }
 
 
-    if (
-        percentage === 100 &&
-        !giftOpened
-    ) {
+    if (percentage === 100) {
 
-        setTimeout(
-            () => {
+        progressBar.classList.add(
+            "complete"
+        );
 
+        if (!giftOpened) {
+
+            setTimeout(() => {
                 showCompletionGift();
+            }, 700);
 
-            },
-            600
+        }
+
+    } else {
+
+        progressBar.classList.remove(
+            "complete"
         );
 
     }
 
 }
-
 
 // =========================================================
 // SHOW GIFT
@@ -832,45 +829,29 @@ function showCompletionGift() {
 function openGift() {
 
     if (giftOpened) {
-
         return;
-
     }
 
+    giftOpened = true;
 
-    giftOpened =
-        true;
+    giftSound.currentTime = 0;
+    giftSound.play().catch(() => {});
 
-
-    giftBox.classList.add(
-        "gift-pop"
-    );
-
+    giftBox.classList.add("gift-pop");
 
     giftHint.textContent =
         "Opening your reward...";
 
-
     createConfetti();
 
+    setTimeout(() => {
 
-    setTimeout(
-        () => {
+        giftStage.classList.add("hidden");
 
-            giftStage.classList.add(
-                "hidden"
-            );
+        successMessage.classList.remove("hidden");
 
-            successMessage.classList.remove(
-                "hidden"
-            );
-
-        },
-        600
-    );
-
+    }, 600);
 }
-
 
 // =========================================================
 // CLOSE
@@ -1028,22 +1009,22 @@ closeCompletion.addEventListener(
     closeCompletionGift
 );
 
-button.addEventListener(
-    "click",
-    () => {
+// button.addEventListener(
+//     "click",
+//     () => {
 
-        activeStepId = step.id;
+//         activeStepId = step.id;
 
-        renderSidebar();
+//         renderSidebar();
 
-        renderCurrentStep();
+//         renderCurrentStep();
 
-        setTimeout(() => {
-            scrollToStep();
-        }, 50);
+//         setTimeout(() => {
+//             scrollToStep();
+//         }, 50);
 
-    }
-);
+//     }
+// );
 // =========================================================
 // INITIAL RENDER
 // =========================================================
