@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LinkedIn Profile Upgrade</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- JavaScript -->
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <!-- Brand -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+
+                <div>
+                    <div class="brand-title-row">
+
+                        <h1>
+                            LinkedIn Profile Upgrade
+                        </h1>
+
+                        <span class="brand-badge">
+                            Workshop
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Review · Improve · Stand Out
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Presenter -->
+
+            <div class="presenter">
+
+                <div class="presenter-info">
+
+                    <strong>
+                        Maria Zourob
+                    </strong>
+
+                    <span>
+                        Profile Workshop
+                    </span>
+
+                </div>
+
+                <img
+                    src="./assets/images/maria.jpg"
+                    alt="Maria Zourob"
+                    class="presenter-image"
+                >
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         WELCOME
+    ====================================================== -->
+
+    <main id="welcomeSection">
+
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <div class="welcome-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+
+                <span class="eyebrow">
+                    LINKEDIN PROFILE WORKSHOP
+                </span>
+
+                <h2>
+                    Make your LinkedIn profile
+                    <span>work for you.</span>
+                </h2>
+
+                <p>
+                    A simple step-by-step experience to help you
+                    build a stronger, clearer and more professional
+                    LinkedIn profile.
+                </p>
+
+                <button
+                    id="startBtn"
+                    class="primary-button"
+                    type="button"
+                >
+                    Start Improving
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="welcome-meta">
+
+                    <span>
+                        <i class="fa-solid fa-layer-group"></i>
+                        10 steps
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-clock"></i>
+                        Simple & focused
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-trophy"></i>
+                        Finish with a reward
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         WORKSHOP
+    ====================================================== -->
+
+    <main
+        id="stepsSection"
+        class="hidden"
+    >
+
+        <section class="workshop-container">
+
+            <!-- =================================================
+                 PROGRESS HEADER
+            ================================================== -->
+
+            <div class="progress-header">
+
+                <div>
+
+                    <span class="section-label">
+                        PROFILE OPTIMIZATION
+                    </span>
+
+                    <h2>
+                        Build a stronger profile
+                    </h2>
+
+                    <p>
+                        Complete each step and make your profile
+                        stronger one section at a time.
+                    </p>
+
+                </div>
+
+                <div class="score-display">
+
+                    <span id="progressText">
+                        0%
+                    </span>
+
+                    <small>
+                        Complete
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+
+            <div class="progress-track">
+
+                <div
+                    id="progressBar"
+                    class="progress-fill"
+                ></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 WORKSPACE
+            ================================================== -->
+
+            <div class="workspace">
+
+
+                <!-- =================================================
+                     SIDEBAR
+                ================================================== -->
+
+                <aside class="steps-sidebar">
+
+                    <div class="sidebar-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                YOUR PROGRESS
+                            </span>
+
+                            <h3>
+                                10 Steps
+                            </h3>
+
+                        </div>
+
+                        <div
+                            id="sidebarCounter"
+                            class="sidebar-counter"
+                        >
+                            0 / 10
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="sidebarSteps"
+                        class="sidebar-list"
+                    ></div>
+
+                </aside>
+
+
+                <!-- =================================================
+                     MAIN STEP
+                ================================================== -->
+
+                <section class="step-panel">
+
+                    <!-- Step Header -->
+
+                    <div class="step-header">
+
+                        <div class="step-number-large">
+                            <span id="currentStepNumberShort">
+                                01
+                            </span>
+                        </div>
+
+                        <div class="step-heading">
+
+                            <span
+                                id="currentStepNumber"
+                                class="step-count"
+                            >
+                                Step 1 of 10
+                            </span>
+
+                            <h2 id="currentStepTitle">
+                                Profile Photo
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <p
+                        id="currentStepDescription"
+                        class="step-description"
+                    ></p>
+
+
+                    <!-- Why it matters -->
+
+                    <div class="why-box">
+
+                        <div class="why-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                WHY IT MATTERS
+                            </span>
+
+                            <p id="currentStepWhy">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Content Grid -->
+
+                    <div class="content-grid">
+
+
+                        <!-- Example -->
+
+                        <div class="info-card example-card">
+
+                            <div class="info-card-header">
+
+                                <div class="info-icon example-icon">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        EXAMPLE
+                                    </span>
+
+                                    <h4>
+                                        What good looks like
+                                    </h4>
+
+                                </div>
+
+                            </div>
+
+                            <p
+                                id="currentStepExample"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Tip -->
+
+                        <div class="info-card tip-card">
+
+                            <div class="info-card-header">
+
+                                <div class="info-icon tip-icon">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PRO TIP
+                                    </span>
+
+                                    <h4>
+                                        Keep this in mind
+                                    </h4>
+
+                                </div>
+
+                            </div>
+
+                            <p
+                                id="currentStepTip"
+                            ></p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Actions -->
+
+                    <div class="step-actions">
+
+                        <button
+                            id="stepCompleteBtn"
+                            type="button"
+                            class="complete-button"
+                        >
+                            <i class="fa-regular fa-circle-check"></i>
+                            Mark as completed
+                        </button>
+
+
+                        <button
+                            id="nextStepBtn"
+                            type="button"
+                            class="next-button"
+                        >
+                            Next step
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         COMPLETION OVERLAY
+    ====================================================== -->
+
+    <div
+        id="completionOverlay"
+        class="completion-overlay hidden"
+    >
+
+        <div class="completion-modal">
+
+            <!-- Close -->
+
+            <button
+                id="closeCompletion"
+                type="button"
+                class="close-button"
+                aria-label="Close"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <!-- Gift -->
+
+            <div id="giftStage">
+
+                <span class="completion-label">
+                    PROFILE COMPLETE
+                </span>
+
+                <h2>
+                    You did it! 🎉
+                </h2>
+
+                <p>
+                    You completed all 10 LinkedIn
+                    optimization steps.
+                </p>
+
+                <button
+                    id="giftBox"
+                    type="button"
+                    class="gift-box"
+                    aria-label="Open your reward"
+                >
+                    🎁
+                </button>
+
+                <span
+                    id="giftHint"
+                    class="gift-hint"
+                >
+                    A little surprise is waiting for you
+                </span>
+
+            </div>
+
+
+            <!-- Success -->
+
+            <div
+                id="successMessage"
+                class="success-message hidden"
+            >
+
+                <div class="success-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <span class="completion-label">
+                    WELL DONE
+                </span>
+
+                <h2>
+                    Great Job! 🎉
+                </h2>
+
+                <p>
+                    Your LinkedIn profile is ready
+                    for its next opportunity.
+                </p>
+
+                <div class="final-score">
+
+                    <span id="score">
+                        100
+                    </span>
+
+                    <small>
+                        / 100
+                    </small>
+
+                </div>
+
+                <div class="success-footer">
+                    🚀 Keep building. Keep growing.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
