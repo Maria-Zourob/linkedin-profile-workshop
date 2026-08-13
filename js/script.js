@@ -1,4 +1,18 @@
+// =========================================================
+// STATE
+// =========================================================
+
 let activeStepId = 1;
+
+let completedSteps =
+    JSON.parse(
+        localStorage.getItem("linkedinCompletedSteps")
+    ) || [];
+
+let giftOpened = false;
+
+let participantName =
+    localStorage.getItem("participantName") || "";
 
 
 // =========================================================
@@ -9,209 +23,140 @@ const steps = [
 
     {
         id: 1,
-
         title: "Profile Photo",
-
         description:
             "Use a clear and professional profile photo that immediately creates a strong first impression.",
-
         why:
             "Your profile photo is often the first visual element recruiters notice.",
-
         icon: "fa-user",
-
         example:
             "Use a clear headshot with good lighting, a simple background, and a friendly professional appearance.",
-
         tip:
             "Choose a recent photo where your face is clearly visible."
     },
 
-
     {
         id: 2,
-
         title: "Headline",
-
         description:
             "Write a clear headline that explains who you are, what you do, and what you bring to the table.",
-
         why:
             "Your headline appears across LinkedIn and helps people understand your professional direction quickly.",
-
         icon: "fa-heading",
-
         example:
             "Full Stack Developer | ASP.NET Core | React | SQL Server",
-
         tip:
             "Don't use only your job title. Include the skills or area you want to be known for."
     },
 
-
     {
         id: 3,
-
         title: "About Section",
-
         description:
             "Tell your professional story in a short and clear summary that shows your experience, skills, and goals.",
-
         why:
             "A strong About section helps recruiters understand who you are beyond your job title.",
-
         icon: "fa-align-left",
-
         example:
             "Software developer passionate about building scalable web applications using ASP.NET Core, React and SQL Server.",
-
         tip:
             "Keep it concise and write it in your own natural voice."
     },
 
-
     {
         id: 4,
-
         title: "Experience",
-
         description:
             "Add your relevant work experience and describe what you actually contributed to each role.",
-
         why:
             "Experience shows recruiters how you have applied your skills in real situations.",
-
         icon: "fa-briefcase",
-
         example:
             "Frontend Developer — Built responsive interfaces using HTML, CSS and JavaScript.",
-
         tip:
             "Focus on achievements and results instead of listing responsibilities only."
     },
 
-
     {
         id: 5,
-
         title: "Education",
-
         description:
             "Add your university, degree, and relevant academic information in a clean and professional way.",
-
         why:
             "Education gives recruiters context about your background and technical foundation.",
-
         icon: "fa-graduation-cap",
-
         example:
             "Bachelor's Degree in Intelligent Systems and Computer Engineering",
-
         tip:
             "Include relevant coursework or academic achievements when they strengthen your profile."
     },
 
-
     {
         id: 6,
-
         title: "Skills",
-
         description:
             "Add the technical and professional skills that best represent your capabilities.",
-
         why:
             "Skills help recruiters quickly match your profile with the requirements of a role.",
-
         icon: "fa-code",
-
         example:
             "ASP.NET Core, C#, SQL Server, React, JavaScript, Git",
-
         tip:
             "Prioritize skills that match the jobs you want."
     },
 
-
     {
         id: 7,
-
         title: "Featured Section",
-
         description:
             "Showcase your strongest projects, certificates, posts, or achievements in one visible place.",
-
         why:
             "The Featured section gives recruiters concrete evidence of what you can actually do.",
-
         icon: "fa-star",
-
         example:
             "Add your GitHub projects, portfolio, certificates, or important professional posts.",
-
         tip:
             "Quality matters more than quantity. Choose your strongest work."
     },
 
-
     {
         id: 8,
-
         title: "Certifications",
-
         description:
             "Add relevant certifications and courses that support your professional direction.",
-
         why:
             "Relevant certifications can reinforce your skills and show continuous learning.",
-
         icon: "fa-certificate",
-
         example:
             "Add certificates from recognized platforms, training programs, or professional organizations.",
-
         tip:
             "Only include certifications that are relevant to your career."
     },
 
-
     {
         id: 9,
-
         title: "Projects",
-
         description:
             "Showcase projects that demonstrate your practical skills and problem-solving ability.",
-
         why:
             "Projects give recruiters real examples of what you have built and how you work.",
-
         icon: "fa-diagram-project",
-
         example:
             "Add 2–4 strong projects with a title, short description, technologies used, and a GitHub or live link.",
-
         tip:
             "Choose projects that are relevant to the type of job you want."
     },
 
-
     {
         id: 10,
-
         title: "Custom LinkedIn URL",
-
         description:
             "Create a clean and professional LinkedIn profile URL that is easy to share.",
-
         why:
             "A clean URL looks more professional on your CV, portfolio, email signature, and applications.",
-
         icon: "fa-link",
-
         example:
             "linkedin.com/in/maria-zourob",
-
         tip:
             "Keep it simple, professional, and as close to your name as possible."
     }
@@ -248,130 +193,221 @@ const stepNumber =
     document.getElementById("currentStepNumber");
 
 const stepNumberShort =
-    document.getElementById(
-        "currentStepNumberShort"
-    );
+    document.getElementById("currentStepNumberShort");
 
 const stepTitle =
-    document.getElementById(
-        "currentStepTitle"
-    );
+    document.getElementById("currentStepTitle");
 
 const stepDescription =
-    document.getElementById(
-        "currentStepDescription"
-    );
+    document.getElementById("currentStepDescription");
 
 const stepWhy =
-    document.getElementById(
-        "currentStepWhy"
-    );
+    document.getElementById("currentStepWhy");
 
 const stepExample =
-    document.getElementById(
-        "currentStepExample"
-    );
+    document.getElementById("currentStepExample");
 
 const stepTip =
-    document.getElementById(
-        "currentStepTip"
-    );
+    document.getElementById("currentStepTip");
 
 const stepCompleteBtn =
-    document.getElementById(
-        "stepCompleteBtn"
-    );
+    document.getElementById("stepCompleteBtn");
 
 const nextStepBtn =
-    document.getElementById(
-        "nextStepBtn"
-    );
+    document.getElementById("nextStepBtn");
 
 const stepPanel =
-    document.querySelector(
-        ".step-panel"
-    );
+    document.querySelector(".step-panel");
+
+
+// =========================================================
+// COMPLETION ELEMENTS
+// =========================================================
 
 const completionOverlay =
-    document.getElementById(
-        "completionOverlay"
-    );
+    document.getElementById("completionOverlay");
 
 const giftStage =
-    document.getElementById(
-        "giftStage"
-    );
+    document.getElementById("giftStage");
 
 const giftBox =
-    document.getElementById(
-        "giftBox"
-    );
+    document.getElementById("giftBox");
 
 const giftHint =
-    document.getElementById(
-        "giftHint"
-    );
+    document.getElementById("giftHint");
 
 const successMessage =
-    document.getElementById(
-        "successMessage"
-    );
+    document.getElementById("successMessage");
 
 const score =
-    document.getElementById(
-        "score"
-    );
+    document.getElementById("score");
 
 const closeCompletion =
-    document.getElementById(
-        "closeCompletion"
-    );
+    document.getElementById("closeCompletion");
 
 const giftSound =
     document.getElementById("giftSound");
 
+
 // =========================================================
-// STATE
+// NAME MODAL
 // =========================================================
 
-let completedSteps =
-    JSON.parse(
-        localStorage.getItem(
-            "linkedinCompletedSteps"
-        )
-    ) || [];
+const nameModal =
+    document.getElementById("nameModal");
 
-let giftOpened = false;
+const participantNameInput =
+    document.getElementById("participantName");
+
+const continueWorkshopBtn =
+    document.getElementById("continueWorkshopBtn");
+
+const closeNameModal =
+    document.getElementById("closeNameModal");
+
+const nameError =
+    document.getElementById("nameError");
+
+ 
+// =========================================================
+// CERTIFICATE
+// =========================================================
+
+const certificate =
+    document.getElementById("certificate");
+
+const certificateOverlay =
+    document.getElementById("certificateOverlay");
+
+const certificateParticipantName =
+    document.getElementById(
+        "certificateParticipantName"
+    );
+
+const successParticipantName =
+    document.getElementById(
+        "successParticipantName"
+    );
+
+const certificateBtn =
+    document.getElementById(
+        "certificateBtn"
+    );
+
+const closeCertificate =
+    document.getElementById(
+        "closeCertificate"
+    );
+
+const downloadCertificate =
+    document.getElementById(
+        "downloadCertificate"
+    );
 
 
 // =========================================================
 // START WORKSHOP
 // =========================================================
 
-startBtn.addEventListener(
+startBtn.addEventListener("click", () => {
+
+    nameModal.classList.remove("hidden");
+
+    nameModal.classList.add(
+        "flex",
+        "items-center",
+        "justify-center"
+    );
+
+    participantNameInput.value =
+        participantName;
+
+    nameError.classList.add("hidden");
+
+    setTimeout(() => {
+        participantNameInput.focus();
+    }, 100);
+
+});
+
+
+continueWorkshopBtn.addEventListener(
     "click",
-    () => {
+    startWorkshop
+);
 
-        welcomeSection.classList.add(
-            "hidden"
-        );
 
-        stepsSection.classList.remove(
-            "hidden"
-        );
+participantNameInput.addEventListener(
+    "keydown",
+    event => {
 
-        activeStepId = 1;
+        if (event.key === "Enter") {
 
-        renderSidebar();
+            startWorkshop();
 
-        renderCurrentStep();
-
-        updateProgress();
-
-      scrollToStep();
+        }
 
     }
 );
+
+closeNameModal.addEventListener(
+    "click",
+    () => {
+
+        nameModal.classList.add("hidden");
+
+        nameModal.classList.remove(
+            "flex",
+            "items-center",
+            "justify-center"
+        );
+
+    }
+);
+
+// =========================================================
+// START WORKSHOP FUNCTION
+// =========================================================
+
+function startWorkshop() {
+
+    const name =
+        participantNameInput.value.trim();
+
+    if (!name) {
+
+        nameError.classList.remove("hidden");
+
+        participantNameInput.focus();
+
+        return;
+
+    }
+
+    participantName = name;
+
+    localStorage.setItem(
+        "participantName",
+        participantName
+    );
+
+    nameModal.classList.add("hidden");
+
+    welcomeSection.classList.add("hidden");
+
+    stepsSection.classList.remove("hidden");
+
+    activeStepId = 1;
+
+    renderSidebar();
+
+    renderCurrentStep();
+
+    updateProgress();
+
+    scrollToStep();
+
+}
 
 
 // =========================================================
@@ -418,9 +454,7 @@ function renderCurrentStep() {
 
 
     const isCompleted =
-        completedSteps.includes(
-            step.id
-        );
+        completedSteps.includes(step.id);
 
 
     // =====================================================
@@ -429,33 +463,41 @@ function renderCurrentStep() {
 
     if (isCompleted) {
 
-        stepCompleteBtn.innerHTML =
-            `
-                <i class="fa-solid fa-check"></i>
-                Completed
-            `;
+        stepCompleteBtn.innerHTML = `
+            <i class="fa-solid fa-check"></i>
+            Completed
+        `;
 
-        stepCompleteBtn.disabled =
-            true;
+        stepCompleteBtn.disabled = true;
 
-        stepCompleteBtn.classList.add(
-            "completed"
-        );
+        stepCompleteBtn.className = `
+            flex items-center justify-center gap-2
+            rounded-xl px-5 py-3
+            bg-emerald-50 text-emerald-600
+            border border-emerald-200
+            font-semibold
+            cursor-not-allowed
+        `;
 
     } else {
 
-        stepCompleteBtn.innerHTML =
-            `
-                <i class="fa-regular fa-circle-check"></i>
-                Mark as completed
-            `;
+        stepCompleteBtn.innerHTML = `
+            <i class="fa-regular fa-circle-check"></i>
+            Mark as completed
+        `;
 
-        stepCompleteBtn.disabled =
-            false;
+        stepCompleteBtn.disabled = false;
 
-        stepCompleteBtn.classList.remove(
-            "completed"
-        );
+        stepCompleteBtn.className = `
+            flex items-center justify-center gap-2
+            rounded-xl px-5 py-3
+            bg-white text-slate-700
+            border border-slate-200
+            font-semibold
+            hover:border-blue-300
+            hover:text-blue-600
+            transition-all duration-200
+        `;
 
     }
 
@@ -464,40 +506,37 @@ function renderCurrentStep() {
     // NEXT BUTTON
     // =====================================================
 
-    if (
-        activeStepId ===
-        steps.length
-    ) {
+    if (activeStepId === steps.length) {
 
-        nextStepBtn.innerHTML =
-            `
-                Finish
-                <i class="fa-solid fa-check"></i>
-            `;
+        nextStepBtn.innerHTML = `
+            Finish
+            <i class="fa-solid fa-check"></i>
+        `;
 
     } else {
 
-        nextStepBtn.innerHTML =
-            `
-                Next step
-                <i class="fa-solid fa-arrow-right"></i>
-            `;
+        nextStepBtn.innerHTML = `
+            Next step
+            <i class="fa-solid fa-arrow-right"></i>
+        `;
 
     }
 
 
     // =====================================================
-    // ANIMATION
+    // SIMPLE TAILWIND ANIMATION
     // =====================================================
 
     stepPanel.classList.remove(
-        "animate"
+        "opacity-0",
+        "translate-y-2"
     );
 
-    void stepPanel.offsetWidth;
-
     stepPanel.classList.add(
-        "animate"
+        "transition-all",
+        "duration-300",
+        "opacity-100",
+        "translate-y-0"
     );
 
 }
@@ -511,114 +550,211 @@ function renderSidebar() {
 
     sidebarSteps.innerHTML = "";
 
-    steps.forEach(
-        step => {
+    steps.forEach(step => {
 
-            const isCompleted =
-                completedSteps.includes(
-                    step.id
-                );
+        const isCompleted =
+            completedSteps.includes(step.id);
 
-            const isActive =
-                activeStepId === step.id;
+        const isActive =
+            activeStepId === step.id;
 
 
-            const button =
-                document.createElement(
-                    "button"
-                );
+        const button =
+            document.createElement("button");
 
 
-            button.type =
-                "button";
+        button.type = "button";
 
 
-            button.className =
-                "sidebar-item";
+        button.className = `
+            w-full flex items-center gap-3
+            text-left rounded-xl p-3
+            border transition-all duration-200
+            group
+        `;
 
 
-            if (isActive) {
+        if (isActive) {
 
-                button.classList.add(
-                    "active"
-                );
-
-            }
-
-
-            if (isCompleted) {
-
-                button.classList.add(
-                    "completed"
-                );
-
-            }
-
-
-            button.innerHTML =
-                `
-
-                    <div
-                        class="sidebar-step-number"
-                    >
-                        ${
-                            isCompleted
-                                ? '<i class="fa-solid fa-check"></i>'
-                                : String(step.id).padStart(2, "0")
-                        }
-                    </div>
-
-
-                    <div
-                        class="sidebar-item-content"
-                    >
-
-                        <span
-                            class="sidebar-item-title"
-                        >
-                            ${step.title}
-                        </span>
-
-
-                        <span
-                            class="sidebar-item-status"
-                        >
-                            ${
-                                isCompleted
-                                    ? "Completed"
-                                    : isActive
-                                        ? "Current step"
-                                        : `Step ${step.id}`
-                            }
-                        </span>
-
-                    </div>
-
-                `;
-
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    activeStepId =
-                        step.id;
-
-                    renderSidebar();
-
-                    renderCurrentStep();
-
-                    scrollToStep();
-                }
+            button.classList.add(
+                "bg-blue-50",
+                "border-blue-200",
+                "text-blue-700"
             );
 
+        } else {
 
-            sidebarSteps.appendChild(
-                button
+            button.classList.add(
+                "bg-transparent",
+                "border-transparent",
+                "hover:bg-slate-50"
             );
 
         }
-    );
+
+
+        // =================================================
+        // STEP NUMBER
+        // =================================================
+
+        const numberDiv =
+            document.createElement("div");
+
+
+        numberDiv.className = `
+            w-9 h-9 shrink-0
+            rounded-lg
+            flex items-center justify-center
+            text-sm font-bold
+        `;
+
+
+        if (isCompleted) {
+
+            numberDiv.classList.add(
+                "bg-emerald-500",
+                "text-white"
+            );
+
+            numberDiv.innerHTML =
+                `<i class="fa-solid fa-check"></i>`;
+
+        } else if (isActive) {
+
+            numberDiv.classList.add(
+                "bg-blue-600",
+                "text-white"
+            );
+
+            numberDiv.textContent =
+                String(step.id).padStart(2, "0");
+
+        } else {
+
+            numberDiv.classList.add(
+                "bg-slate-100",
+                "text-slate-500"
+            );
+
+            numberDiv.textContent =
+                String(step.id).padStart(2, "0");
+
+        }
+
+
+        // =================================================
+        // CONTENT
+        // =================================================
+
+        const contentDiv =
+            document.createElement("div");
+
+
+        contentDiv.className =
+            "min-w-0 flex-1";
+
+
+        const title =
+            document.createElement("span");
+
+
+        title.className =
+            "block text-sm font-semibold truncate";
+
+
+        title.textContent =
+            step.title;
+
+
+        const status =
+            document.createElement("span");
+
+
+        status.className =
+            "block text-xs mt-0.5 text-slate-400";
+
+
+        if (isCompleted) {
+
+            status.textContent =
+                "Completed";
+
+            status.classList.remove(
+                "text-slate-400"
+            );
+
+            status.classList.add(
+                "text-emerald-500"
+            );
+
+        } else if (isActive) {
+
+            status.textContent =
+                "Current step";
+
+            status.classList.remove(
+                "text-slate-400"
+            );
+
+            status.classList.add(
+                "text-blue-500"
+            );
+
+        } else {
+
+            status.textContent =
+                `Step ${step.id}`;
+
+        }
+
+
+        contentDiv.appendChild(title);
+
+        contentDiv.appendChild(status);
+
+        button.appendChild(numberDiv);
+
+        button.appendChild(contentDiv);
+
+
+        // =================================================
+        // CLICK
+        // =================================================
+
+        button.addEventListener(
+    "click",
+    () => {
+
+        activeStepId = step.id;
+
+        renderSidebar();
+
+        renderCurrentStep();
+
+        scrollToStep();
+
+    }
+);
+
+
+
+if (isActive) {
+
+    setTimeout(() => {
+
+        button.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "start"
+        });
+
+    }, 50);
+
+}
+
+        sidebarSteps.appendChild(button);
+
+    });
 
 }
 
@@ -636,7 +772,6 @@ stepCompleteBtn.addEventListener(
                 activeStepId
             )
         ) {
-
             return;
         }
 
@@ -675,8 +810,7 @@ nextStepBtn.addEventListener(
         const currentIndex =
             steps.findIndex(
                 step =>
-                    step.id ===
-                    activeStepId
+                    step.id === activeStepId
             );
 
 
@@ -695,31 +829,12 @@ nextStepBtn.addEventListener(
                 )
             ) {
 
-                stepCompleteBtn.animate(
-                    [
-                        {
-                            transform:
-                                "translateX(0)"
-                        },
-                        {
-                            transform:
-                                "translateX(-5px)"
-                        },
-                        {
-                            transform:
-                                "translateX(5px)"
-                        },
-                        {
-                            transform:
-                                "translateX(0)"
-                        }
-                    ],
-                    {
-                        duration: 300
-                    }
+                shakeButton(
+                    stepCompleteBtn
                 );
 
                 return;
+
             }
 
 
@@ -735,9 +850,7 @@ nextStepBtn.addEventListener(
         // =================================================
 
         activeStepId =
-            steps[
-                currentIndex + 1
-            ].id;
+            steps[currentIndex + 1].id;
 
 
         renderSidebar();
@@ -745,8 +858,30 @@ nextStepBtn.addEventListener(
         renderCurrentStep();
 
         scrollToStep();
+
     }
 );
+
+
+// =========================================================
+// SHAKE BUTTON
+// =========================================================
+
+function shakeButton(button) {
+
+    button.classList.add(
+        "animate-pulse"
+    );
+
+    setTimeout(() => {
+
+        button.classList.remove(
+            "animate-pulse"
+        );
+
+    }, 500);
+
+}
 
 
 // =========================================================
@@ -755,9 +890,11 @@ nextStepBtn.addEventListener(
 
 function updateProgress() {
 
-    const total = steps.length;
+    const total =
+        steps.length;
 
-    const completed = completedSteps.length;
+    const completed =
+        completedSteps.length;
 
     const percentage =
         Math.round(
@@ -768,29 +905,40 @@ function updateProgress() {
     progressBar.style.width =
         `${percentage}%`;
 
+
     progressText.textContent =
         `${percentage}%`;
+
 
     sidebarCounter.textContent =
         `${completed} / ${total}`;
 
 
     if (score) {
+
         score.textContent =
             percentage;
+
     }
 
 
     if (percentage === 100) {
 
         progressBar.classList.add(
-            "complete"
+            "bg-emerald-500"
         );
+
+        progressBar.classList.remove(
+            "bg-blue-600"
+        );
+
 
         if (!giftOpened) {
 
             setTimeout(() => {
+
                 showCompletionGift();
+
             }, 700);
 
         }
@@ -798,12 +946,17 @@ function updateProgress() {
     } else {
 
         progressBar.classList.remove(
-            "complete"
+            "bg-emerald-500"
+        );
+
+        progressBar.classList.add(
+            "bg-blue-600"
         );
 
     }
 
 }
+
 
 // =========================================================
 // SHOW GIFT
@@ -811,8 +964,12 @@ function updateProgress() {
 
 function showCompletionGift() {
 
-    completionOverlay.classList.remove(
-        "hidden"
+    completionOverlay.classList.remove("hidden");
+
+    completionOverlay.classList.add(
+        "flex",
+        "items-center",
+        "justify-center"
     );
 
     document.body.classList.add(
@@ -832,29 +989,54 @@ function openGift() {
         return;
     }
 
+
     giftOpened = true;
 
-    giftSound.currentTime = 0;
-    giftSound.play().catch(() => {});
 
-    giftBox.classList.add("gift-pop");
+    giftSound.currentTime = 0;
+
+    giftSound
+        .play()
+        .catch(() => {});
+
+
+    giftBox.classList.add(
+        "scale-110"
+    );
+
 
     giftHint.textContent =
         "Opening your reward...";
 
+
     createConfetti();
+
 
     setTimeout(() => {
 
-        giftStage.classList.add("hidden");
+        giftStage.classList.add(
+            "hidden"
+        );
 
-        successMessage.classList.remove("hidden");
+        successMessage.classList.remove(
+            "hidden"
+        );
+
+
+        if (successParticipantName) {
+
+            successParticipantName.textContent =
+                participantName;
+
+        }
 
     }, 600);
+
 }
 
+
 // =========================================================
-// CLOSE
+// CLOSE COMPLETION
 // =========================================================
 
 function closeCompletionGift() {
@@ -877,14 +1059,12 @@ function closeCompletionGift() {
 function createConfetti() {
 
     const colors = [
-
         "#2563eb",
         "#22c55e",
         "#f59e0b",
         "#ef4444",
         "#8b5cf6",
         "#ec4899"
-
     ];
 
 
@@ -898,14 +1078,15 @@ function createConfetti() {
     ) {
 
         const confetti =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
 
-        confetti.classList.add(
-            "confetti"
-        );
+        confetti.className = `
+            fixed top-0
+            w-2 h-3
+            z-[9999]
+            pointer-events-none
+        `;
 
 
         const size =
@@ -939,16 +1120,30 @@ function createConfetti() {
                 : "2px";
 
 
-        const duration =
-            Math.random() * 2 + 2;
+        confetti.animate(
+            [
+                {
+                    transform:
+                        `translateY(-20px) rotate(0deg)`,
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translateY(100vh) rotate(720deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration:
+                    Math.random() * 2000 + 2000,
 
+                delay:
+                    Math.random() * 400,
 
-        confetti.style.animationDuration =
-            `${duration}s`;
-
-
-        confetti.style.animationDelay =
-            `${Math.random() * 0.4}s`;
+                easing:
+                    "ease-out"
+            }
+        );
 
 
         document.body.appendChild(
@@ -962,12 +1157,14 @@ function createConfetti() {
                 confetti.remove();
 
             },
-            (duration + 1) * 1000
+            3500
         );
 
     }
 
 }
+
+
 // =========================================================
 // SMART SCROLL
 // =========================================================
@@ -976,6 +1173,7 @@ function scrollToStep() {
 
     const isMobile =
         window.innerWidth <= 640;
+
 
     if (isMobile) {
 
@@ -992,7 +1190,172 @@ function scrollToStep() {
         });
 
     }
+
 }
+
+
+// =========================================================
+// CERTIFICATE
+// =========================================================
+
+certificateBtn.addEventListener(
+    "click",
+    () => {
+
+        certificateParticipantName.textContent =
+            participantName;
+
+        certificateOverlay.classList.remove(
+            "hidden"
+        );
+
+        document.body.classList.add(
+            "overflow-hidden"
+        );
+
+    }
+);
+
+
+// =========================================================
+// CLOSE CERTIFICATE
+// =========================================================
+
+closeCertificate.addEventListener(
+    "click",
+    () => {
+
+        certificateOverlay.classList.add(
+            "hidden"
+        );
+
+        document.body.classList.remove(
+            "overflow-hidden"
+        );
+
+    }
+);
+
+
+// =========================================================
+// DOWNLOAD CERTIFICATE
+// =========================================================
+
+downloadCertificate.addEventListener(
+    "click",
+    async () => {
+
+        const originalText =
+            downloadCertificate.innerHTML;
+
+
+        downloadCertificate.innerHTML = `
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            Preparing Certificate...
+        `;
+
+
+        downloadCertificate.disabled =
+            true;
+
+
+        try {
+
+            const canvas =
+                await html2canvas(
+                    certificate,
+                    {
+                        scale: 2,
+                        useCORS: true,
+                        backgroundColor: "#ffffff"
+                    }
+                );
+
+
+            const imageData =
+                canvas.toDataURL(
+                    "image/png"
+                );
+
+
+            const {
+                jsPDF
+            } = window.jspdf;
+
+
+            const pdf =
+                new jsPDF({
+                    orientation: "landscape",
+                    unit: "mm",
+                    format: "a4"
+                });
+
+
+            const pageWidth =
+                pdf.internal.pageSize.getWidth();
+
+
+            const pageHeight =
+                pdf.internal.pageSize.getHeight();
+
+
+            pdf.addImage(
+                imageData,
+                "PNG",
+                0,
+                0,
+                pageWidth,
+                pageHeight
+            );
+
+
+            const safeName =
+                participantName
+                    .replace(
+                        /[^a-z0-9]/gi,
+                        "-"
+                    )
+                    .replace(
+                        /-+/g,
+                        "-"
+                    )
+                    .replace(
+                        /^-|-$/g,
+                        ""
+                    );
+
+
+            pdf.save(
+                `${safeName}-LinkedIn-Workshop-Certificate.pdf`
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Certificate generation failed:",
+                error
+            );
+
+
+            alert(
+                "Sorry, we couldn't generate the certificate. Please try again."
+            );
+
+
+        } finally {
+
+            downloadCertificate.innerHTML =
+                originalText;
+
+            downloadCertificate.disabled =
+                false;
+
+        }
+
+    }
+);
+
 
 // =========================================================
 // EVENTS
@@ -1009,22 +1372,7 @@ closeCompletion.addEventListener(
     closeCompletionGift
 );
 
-// button.addEventListener(
-//     "click",
-//     () => {
 
-//         activeStepId = step.id;
-
-//         renderSidebar();
-
-//         renderCurrentStep();
-
-//         setTimeout(() => {
-//             scrollToStep();
-//         }, 50);
-
-//     }
-// );
 // =========================================================
 // INITIAL RENDER
 // =========================================================
