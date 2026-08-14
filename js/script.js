@@ -248,7 +248,8 @@ const closeCompletion =
 const giftSound =
     document.getElementById("giftSound");
 
-
+const completeSound =
+    document.getElementById("completeSound");
 // =========================================================
 // NAME MODAL
 // =========================================================
@@ -781,6 +782,14 @@ stepCompleteBtn.addEventListener(
         );
 
 
+        // Play completion sound
+        completeSound.currentTime = 0;
+
+        completeSound
+            .play()
+            .catch(() => {});
+
+
         localStorage.setItem(
             "linkedinCompletedSteps",
             JSON.stringify(
@@ -797,7 +806,6 @@ stepCompleteBtn.addEventListener(
 
     }
 );
-
 
 // =========================================================
 // NEXT STEP
