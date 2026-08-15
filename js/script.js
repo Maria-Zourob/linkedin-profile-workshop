@@ -1,6 +1,7 @@
 // =========================================================
 // STATE
 // =========================================================
+let toastTimeout;
 
 let activeStepId = 1;
 
@@ -13,8 +14,13 @@ let giftOpened = false;
 
 let participantName =
     localStorage.getItem("participantName") || "";
+    // =========================================================
+// START BUTTON
+// =========================================================
 
 
+
+let justCompletedStepId = null;
 // =========================================================
 // STEPS DATA
 // =========================================================
@@ -147,19 +153,30 @@ const steps = [
             "Choose projects that are relevant to the type of job you want."
     },
 
-    {
-        id: 10,
-        title: "Custom LinkedIn URL",
-        description:
-            "Create a clean and professional LinkedIn profile URL that is easy to share.",
-        why:
-            "A clean URL looks more professional on your CV, portfolio, email signature, and applications.",
-        icon: "fa-link",
-        example:
-            "linkedin.com/in/maria-zourob",
-        tip:
-            "Keep it simple, professional, and as close to your name as possible."
-    }
+   {
+    id: 10,
+    title: "Custom LinkedIn URL",
+    description:
+        "Create a clean and professional LinkedIn profile URL that is easy to share.",
+    why:
+        "A clean URL looks more professional on your CV, portfolio, email signature, and applications.",
+    icon: "fa-link",
+    example: `
+    <span class="block text-slate-500">
+        Your URL:
+    </span>
+
+    <strong class="mt-1 block text-slate-700">
+        linkedin.com/in/your-name
+    </strong>
+
+    <span class="mt-3 block text-xs text-slate-400">
+        Example: linkedin.com/in/maria-zourob
+    </span>
+`,
+    tip:
+        "Keep it simple, professional, and as close to your name as possible."
+}
 
 ];
 
@@ -176,13 +193,15 @@ const stepsSection =
 
 const startBtn =
     document.getElementById("startBtn");
-
+const startBtnText =
+    document.getElementById("startBtnText");
 const sidebarSteps =
     document.getElementById("sidebarSteps");
 
 const sidebarCounter =
     document.getElementById("sidebarCounter");
-
+const resetWorkshopBtn =
+    document.getElementById("resetWorkshopBtn");
 const progressBar =
     document.getElementById("progressBar");
 
@@ -244,6 +263,35 @@ const score =
 
 const closeCompletion =
     document.getElementById("closeCompletion");
+  
+    // =========================================================
+// INCOMPLETE STEPS MODAL
+// =========================================================
+
+const incompleteStepsModal =
+    document.getElementById(
+        "incompleteStepsModal"
+    );
+
+const remainingStepsList =
+    document.getElementById(
+        "remainingStepsList"
+    );
+
+const closeIncompleteSteps =
+    document.getElementById(
+        "closeIncompleteSteps"
+    );
+
+const goToIncompleteStep =
+    document.getElementById(
+        "goToIncompleteStep"
+    );
+
+const stayOnStepBtn =
+    document.getElementById(
+        "stayOnStepBtn"
+    );
 
 const giftSound =
     document.getElementById("giftSound");
@@ -305,7 +353,34 @@ const downloadCertificate =
         "downloadCertificate"
     );
 
+const stepCompletionToast =
+    document.getElementById(
+        "stepCompletionToast"
+    );
 
+const closeStepCompletionToast =
+    document.getElementById(
+        "closeStepCompletionToast"
+    );
+
+    if (participantName) {
+
+    startBtnText.textContent =
+        `Continue as ${participantName}`;
+
+}
+// =========================================================
+// RESET WORKSHOP
+// =========================================================
+
+const resetModal =
+    document.getElementById("resetModal");
+
+const cancelResetBtn =
+    document.getElementById("cancelResetBtn");
+
+const confirmResetBtn =
+    document.getElementById("confirmResetBtn");
 // =========================================================
 // START WORKSHOP
 // =========================================================
@@ -410,7 +485,78 @@ function startWorkshop() {
 
 }
 
+function showStepCompletionToast() {
 
+    if (!stepCompletionToast) {
+        return;
+    }
+
+    clearTimeout(toastTimeout);
+
+
+    // Reset animation
+
+    stepCompletionToast.classList.remove(
+        "toast-in",
+        "toast-out"
+    );
+
+
+    // Show
+
+    stepCompletionToast.classList.remove(
+        "hidden"
+    );
+
+
+    // Restart animation
+
+    void stepCompletionToast.offsetWidth;
+
+
+    stepCompletionToast.classList.add(
+        "toast-in"
+    );
+
+
+    // Hide automatically
+
+    toastTimeout = setTimeout(() => {
+
+        hideStepCompletionToast();
+
+    }, 3000);
+
+}
+function hideStepCompletionToast() {
+
+    if (!stepCompletionToast) {
+        return;
+    }
+
+
+    stepCompletionToast.classList.remove(
+        "toast-in"
+    );
+
+    stepCompletionToast.classList.add(
+        "toast-out"
+    );
+
+
+    setTimeout(() => {
+
+        stepCompletionToast.classList.add(
+            "hidden"
+        );
+
+        stepCompletionToast.classList.remove(
+            "toast-out"
+        );
+
+    }, 300);
+
+}
 // =========================================================
 // RENDER CURRENT STEP
 // =========================================================
@@ -446,8 +592,8 @@ function renderCurrentStep() {
         step.why;
 
 
-    stepExample.textContent =
-        step.example;
+  stepExample.innerHTML =
+    step.example;
 
 
     stepTip.textContent =
@@ -610,17 +756,28 @@ function renderSidebar() {
         `;
 
 
-        if (isCompleted) {
+ if (isCompleted) {
 
-            numberDiv.classList.add(
-                "bg-emerald-500",
-                "text-white"
-            );
+    numberDiv.classList.add(
+        "bg-emerald-500",
+        "text-white"
+    );
 
-            numberDiv.innerHTML =
-                `<i class="fa-solid fa-check"></i>`;
 
-        } else if (isActive) {
+    if (
+        justCompletedStepId === step.id
+    ) {
+
+        numberDiv.classList.add(
+            "sidebar-check-pop"
+        );
+
+    }
+
+
+    numberDiv.innerHTML =
+        `<i class="fa-solid fa-check"></i>`;
+} else if (isActive) {
 
             numberDiv.classList.add(
                 "bg-blue-600",
@@ -729,6 +886,7 @@ function renderSidebar() {
         activeStepId = step.id;
 
         renderSidebar();
+justCompletedStepId = null;
 
         renderCurrentStep();
 
@@ -777,10 +935,14 @@ stepCompleteBtn.addEventListener(
         }
 
 
-        completedSteps.push(
-            activeStepId
-        );
+     completedSteps.push(
+    activeStepId
+);
 
+justCompletedStepId =
+    activeStepId;
+
+showStepCompletionToast();
 
         // Play completion sound
         completeSound.currentTime = 0;
@@ -806,7 +968,154 @@ stepCompleteBtn.addEventListener(
 
     }
 );
+// =========================================================
+// SHOW INCOMPLETE STEPS MODAL
+// =========================================================
 
+function showIncompleteStepsModal() {
+
+    const incompleteSteps =
+        steps.filter(
+            step =>
+                !completedSteps.includes(step.id)
+        );
+
+
+    if (incompleteSteps.length === 0) {
+        return;
+    }
+
+
+    // Clear previous list
+
+    remainingStepsList.innerHTML = "";
+
+
+    // Render remaining steps
+
+    incompleteSteps.forEach(step => {
+
+        const stepItem =
+            document.createElement("button");
+
+
+        stepItem.type = "button";
+
+        stepItem.className = `
+            flex w-full items-center gap-3
+            rounded-lg
+            border border-white
+            bg-white
+            p-3
+            text-left
+            transition-all duration-200
+            hover:border-blue-200
+            hover:bg-blue-50
+        `;
+
+
+        stepItem.innerHTML = `
+
+            <span
+                class="
+                    flex h-8 w-8 shrink-0
+                    items-center justify-center
+                    rounded-lg
+                    bg-slate-100
+                    text-xs font-bold
+                    text-slate-500
+                "
+            >
+                ${String(step.id).padStart(2, "0")}
+            </span>
+
+            <span
+                class="
+                    min-w-0 flex-1
+                    text-sm font-semibold
+                    text-slate-700
+                "
+            >
+                ${step.title}
+            </span>
+
+            <i
+                class="
+                    fa-solid fa-arrow-right
+                    text-xs text-slate-400
+                "
+            ></i>
+        `;
+
+
+        stepItem.addEventListener(
+            "click",
+            () => {
+
+                closeIncompleteStepsModal();
+
+                goToStep(step.id);
+
+            }
+        );
+
+
+        remainingStepsList.appendChild(
+            stepItem
+        );
+
+    });
+
+
+    // Show modal
+
+    incompleteStepsModal.classList.remove(
+        "hidden"
+    );
+
+    incompleteStepsModal.classList.add(
+        "flex"
+    );
+
+    document.body.classList.add(
+        "overflow-hidden"
+    );
+
+}
+// =========================================================
+// CLOSE INCOMPLETE STEPS MODAL
+// =========================================================
+
+function closeIncompleteStepsModal() {
+
+    incompleteStepsModal.classList.add(
+        "hidden"
+    );
+
+    incompleteStepsModal.classList.remove(
+        "flex"
+    );
+
+    document.body.classList.remove(
+        "overflow-hidden"
+    );
+
+}
+// =========================================================
+// GO TO STEP
+// =========================================================
+
+function goToStep(stepId) {
+
+    activeStepId = stepId;
+
+    renderSidebar();
+
+    renderCurrentStep();
+
+    scrollToStep();
+
+}
 // =========================================================
 // NEXT STEP
 // =========================================================
@@ -826,31 +1135,53 @@ nextStepBtn.addEventListener(
         // LAST STEP
         // =================================================
 
-        if (
-            currentIndex ===
-            steps.length - 1
-        ) {
+    if (
+    currentIndex ===
+    steps.length - 1
+) {
 
-            if (
+    // =================================================
+    // CHECK ALL STEPS BEFORE FINISHING
+    // =================================================
+
+    const incompleteSteps =
+        steps.filter(
+            step =>
                 !completedSteps.includes(
-                    activeStepId
+                    step.id
                 )
-            ) {
-
-                shakeButton(
-                    stepCompleteBtn
-                );
-
-                return;
-
-            }
+        );
 
 
-            showCompletionGift();
+    // If there are incomplete steps
 
-            return;
+    if (incompleteSteps.length > 0) {
 
-        }
+        // Give visual feedback on current button
+
+        shakeButton(
+            stepCompleteBtn
+        );
+
+
+        // Show clear explanation
+
+        showIncompleteStepsModal();
+
+        return;
+
+    }
+
+
+    // =================================================
+    // ALL STEPS COMPLETED
+    // =================================================
+
+    showCompletionGift();
+
+    return;
+
+}
 
 
         // =================================================
@@ -1368,7 +1699,44 @@ downloadCertificate.addEventListener(
 // =========================================================
 // EVENTS
 // =========================================================
+closeIncompleteSteps.addEventListener(
+    "click",
+    closeIncompleteStepsModal
+);
 
+
+stayOnStepBtn.addEventListener(
+    "click",
+    closeIncompleteStepsModal
+);
+
+
+goToIncompleteStep.addEventListener(
+    "click",
+    () => {
+
+        const firstIncompleteStep =
+            steps.find(
+                step =>
+                    !completedSteps.includes(
+                        step.id
+                    )
+            );
+
+
+        if (!firstIncompleteStep) {
+            return;
+        }
+
+
+        closeIncompleteStepsModal();
+
+        goToStep(
+            firstIncompleteStep.id
+        );
+
+    }
+);
 giftBox.addEventListener(
     "click",
     openGift
@@ -1379,8 +1747,96 @@ closeCompletion.addEventListener(
     "click",
     closeCompletionGift
 );
+// =========================================================
+// OPEN RESET MODAL
+// =========================================================
+
+resetWorkshopBtn.addEventListener(
+    "click",
+    () => {
+
+        resetModal.classList.remove("hidden");
+
+        resetModal.classList.add(
+            "flex",
+            "items-center",
+            "justify-center"
+        );
+
+    }
+);
+// =========================================================
+// CANCEL RESET
+// =========================================================
+
+cancelResetBtn.addEventListener(
+    "click",
+    () => {
+
+        resetModal.classList.add("hidden");
+
+        resetModal.classList.remove(
+            "flex",
+            "items-center",
+            "justify-center"
+        );
+
+    }
+);
+// =========================================================
+// CONFIRM RESET
+// =========================================================
+
+confirmResetBtn.addEventListener(
+    "click",
+    () => {
+
+        // Clear saved progress
+        localStorage.removeItem(
+            "linkedinCompletedSteps"
+        );
+
+        // Reset state
+        completedSteps = [];
+
+        activeStepId = 1;
+
+        giftOpened = false;
 
 
+        // Close reset modal
+        resetModal.classList.add("hidden");
+
+        resetModal.classList.remove(
+            "flex",
+            "items-center",
+            "justify-center"
+        );
+
+
+        // Reset completion UI
+        giftStage.classList.remove("hidden");
+
+        successMessage.classList.add("hidden");
+
+
+        // Update workshop
+        renderSidebar();
+
+        renderCurrentStep();
+
+        updateProgress();
+
+
+        // Scroll to first step
+        scrollToStep();
+
+    }
+);
+closeStepCompletionToast.addEventListener(
+    "click",
+    hideStepCompletionToast
+);
 // =========================================================
 // INITIAL RENDER
 // =========================================================
