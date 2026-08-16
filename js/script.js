@@ -14,6 +14,32 @@ let giftOpened = false;
 
 let participantName =
     localStorage.getItem("participantName") || "";
+let certificateId =
+localStorage.getItem("certificateId") || "";
+function generateCertificateId() {
+
+    if (!certificateId) {
+
+        const year =
+            new Date().getFullYear();
+
+        const uniquePart =
+            Date.now()
+                .toString(36)
+                .toUpperCase()
+                .slice(-6);
+
+        certificateId =
+            `BB-LINKEDIN-${year}-${uniquePart}`;
+
+        localStorage.setItem(
+            "certificateId",
+            certificateId
+        );
+    }
+
+    return certificateId;
+}
     // =========================================================
 // START BUTTON
 // =========================================================
@@ -332,7 +358,10 @@ const certificateParticipantName =
     document.getElementById(
         "certificateParticipantName"
     );
-
+const certificateIdDisplay =
+    document.getElementById(
+        "certificateId"
+    );
 const successParticipantName =
     document.getElementById(
         "successParticipantName"
@@ -1303,6 +1332,9 @@ function updateProgress() {
 
 function showCompletionGift() {
 
+    // Generate certificate ID once
+    generateCertificateId();
+
     completionOverlay.classList.remove("hidden");
 
     completionOverlay.classList.add(
@@ -1314,9 +1346,7 @@ function showCompletionGift() {
     document.body.classList.add(
         "overflow-hidden"
     );
-
 }
-
 
 // =========================================================
 // OPEN GIFT
@@ -1536,13 +1566,17 @@ function scrollToStep() {
 // =========================================================
 // CERTIFICATE
 // =========================================================
-
 certificateBtn.addEventListener(
     "click",
     () => {
 
+        generateCertificateId();
+
         certificateParticipantName.textContent =
             participantName;
+
+        certificateIdDisplay.textContent =
+            certificateId;
 
         certificateOverlay.classList.remove(
             "hidden"
@@ -1554,8 +1588,6 @@ certificateBtn.addEventListener(
 
     }
 );
-
-
 // =========================================================
 // CLOSE CERTIFICATE
 // =========================================================
@@ -1648,27 +1680,27 @@ downloadCertificate.addEventListener(
             );
 
 
-            const safeName =
-                participantName
-                    .replace(
-                        /[^a-z0-9]/gi,
-                        "-"
-                    )
-                    .replace(
-                        /-+/g,
-                        "-"
-                    )
-                    .replace(
-                        /^-|-$/g,
-                        ""
-                    );
+          const safeName =
+    participantName
+        .replace(
+            /[^a-z0-9]/gi,
+            "-"
+        )
+        .replace(
+            /-+/g,
+            "-"
+        )
+        .replace(
+            /^-|-$/g,
+            ""
+        );
 
+const shortCertificateId =
+    certificateId.split("-").pop();
 
-            pdf.save(
-                `${safeName}-LinkedIn-Workshop-Certificate.pdf`
-            );
-
-
+pdf.save(
+    `${safeName}-LinkedIn-Workshop-${shortCertificateId}.pdf`
+);
         } catch (error) {
 
             console.error(
@@ -1792,16 +1824,21 @@ confirmResetBtn.addEventListener(
     () => {
 
         // Clear saved progress
-        localStorage.removeItem(
-            "linkedinCompletedSteps"
-        );
+       localStorage.removeItem(
+    "linkedinCompletedSteps"
+);
 
-        // Reset state
-        completedSteps = [];
+localStorage.removeItem(
+    "certificateId"
+);
 
-        activeStepId = 1;
+completedSteps = [];
 
-        giftOpened = false;
+certificateId = "";
+
+activeStepId = 1;
+
+giftOpened = false;
 
 
         // Close reset modal
