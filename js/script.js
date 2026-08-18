@@ -1,8 +1,8 @@
 // =========================================================
 // STATE
 // =========================================================
-let toastTimeout;
 
+let toastTimeout;
 let activeStepId = 1;
 
 let completedSteps =
@@ -14,8 +14,10 @@ let giftOpened = false;
 
 let participantName =
     localStorage.getItem("participantName") || "";
+
 let certificateId =
-localStorage.getItem("certificateId") || "";
+    localStorage.getItem("certificateId") || "";
+
 function generateCertificateId() {
 
     if (!certificateId) {
@@ -40,13 +42,15 @@ function generateCertificateId() {
 
     return certificateId;
 }
-    // =========================================================
+
+
+// =========================================================
 // START BUTTON
 // =========================================================
 
-
-
 let justCompletedStepId = null;
+
+
 // =========================================================
 // STEPS DATA
 // =========================================================
@@ -179,15 +183,15 @@ const steps = [
             "Choose projects that are relevant to the type of job you want."
     },
 
-   {
-    id: 10,
-    title: "Custom LinkedIn URL",
-    description:
-        "Create a clean and professional LinkedIn profile URL that is easy to share.",
-    why:
-        "A clean URL looks more professional on your CV, portfolio, email signature, and applications.",
-    icon: "fa-link",
-    example: `
+    {
+        id: 10,
+        title: "Custom LinkedIn URL",
+        description:
+            "Create a clean and professional LinkedIn profile URL that is easy to share.",
+        why:
+            "A clean URL looks more professional on your CV, portfolio, email signature, and applications.",
+        icon: "fa-link",
+        example: `
     <span class="block text-slate-500">
         Your URL:
     </span>
@@ -200,9 +204,9 @@ const steps = [
         Example: linkedin.com/in/maria-zourob
     </span>
 `,
-    tip:
-        "Keep it simple, professional, and as close to your name as possible."
-}
+        tip:
+            "Keep it simple, professional, and as close to your name as possible."
+    }
 
 ];
 
@@ -219,15 +223,19 @@ const stepsSection =
 
 const startBtn =
     document.getElementById("startBtn");
+
 const startBtnText =
     document.getElementById("startBtnText");
+
 const sidebarSteps =
     document.getElementById("sidebarSteps");
 
 const sidebarCounter =
     document.getElementById("sidebarCounter");
+
 const resetWorkshopBtn =
     document.getElementById("resetWorkshopBtn");
+
 const progressBar =
     document.getElementById("progressBar");
 
@@ -289,8 +297,9 @@ const score =
 
 const closeCompletion =
     document.getElementById("closeCompletion");
-  
-    // =========================================================
+
+
+// =========================================================
 // INCOMPLETE STEPS MODAL
 // =========================================================
 
@@ -324,6 +333,8 @@ const giftSound =
 
 const completeSound =
     document.getElementById("completeSound");
+
+
 // =========================================================
 // NAME MODAL
 // =========================================================
@@ -343,7 +354,15 @@ const closeNameModal =
 const nameError =
     document.getElementById("nameError");
 
- 
+
+if (participantName) {
+
+    startBtnText.textContent =
+        `Continue as ${participantName}`;
+
+}
+
+
 // =========================================================
 // CERTIFICATE
 // =========================================================
@@ -358,10 +377,12 @@ const certificateParticipantName =
     document.getElementById(
         "certificateParticipantName"
     );
+
 const certificateIdDisplay =
     document.getElementById(
         "certificateId"
     );
+
 const successParticipantName =
     document.getElementById(
         "successParticipantName"
@@ -392,12 +413,7 @@ const closeStepCompletionToast =
         "closeStepCompletionToast"
     );
 
-    if (participantName) {
 
-    startBtnText.textContent =
-        `Continue as ${participantName}`;
-
-}
 // =========================================================
 // RESET WORKSHOP
 // =========================================================
@@ -410,6 +426,8 @@ const cancelResetBtn =
 
 const confirmResetBtn =
     document.getElementById("confirmResetBtn");
+
+
 // =========================================================
 // START WORKSHOP
 // =========================================================
@@ -455,6 +473,7 @@ participantNameInput.addEventListener(
     }
 );
 
+
 closeNameModal.addEventListener(
     "click",
     () => {
@@ -469,6 +488,7 @@ closeNameModal.addEventListener(
 
     }
 );
+
 
 // =========================================================
 // START WORKSHOP FUNCTION
@@ -514,6 +534,7 @@ function startWorkshop() {
 
 }
 
+
 function showStepCompletionToast() {
 
     if (!stepCompletionToast) {
@@ -522,7 +543,6 @@ function showStepCompletionToast() {
 
     clearTimeout(toastTimeout);
 
-
     // Reset animation
 
     stepCompletionToast.classList.remove(
@@ -530,23 +550,19 @@ function showStepCompletionToast() {
         "toast-out"
     );
 
-
     // Show
 
     stepCompletionToast.classList.remove(
         "hidden"
     );
 
-
     // Restart animation
 
     void stepCompletionToast.offsetWidth;
 
-
     stepCompletionToast.classList.add(
         "toast-in"
     );
-
 
     // Hide automatically
 
@@ -557,12 +573,13 @@ function showStepCompletionToast() {
     }, 3000);
 
 }
+
+
 function hideStepCompletionToast() {
 
     if (!stepCompletionToast) {
         return;
     }
-
 
     stepCompletionToast.classList.remove(
         "toast-in"
@@ -571,7 +588,6 @@ function hideStepCompletionToast() {
     stepCompletionToast.classList.add(
         "toast-out"
     );
-
 
     setTimeout(() => {
 
@@ -586,6 +602,8 @@ function hideStepCompletionToast() {
     }, 300);
 
 }
+
+
 // =========================================================
 // RENDER CURRENT STEP
 // =========================================================
@@ -600,34 +618,26 @@ function renderCurrentStep() {
 
     if (!step) return;
 
-
     stepNumber.textContent =
         `Step ${step.id} of ${steps.length}`;
-
 
     stepNumberShort.textContent =
         String(step.id).padStart(2, "0");
 
-
     stepTitle.textContent =
         step.title;
-
 
     stepDescription.textContent =
         step.description;
 
-
     stepWhy.textContent =
         step.why;
 
-
-  stepExample.innerHTML =
-    step.example;
-
+    stepExample.innerHTML =
+        step.example;
 
     stepTip.textContent =
         step.tip;
-
 
     const isCompleted =
         completedSteps.includes(step.id);
@@ -734,13 +744,10 @@ function renderSidebar() {
         const isActive =
             activeStepId === step.id;
 
-
         const button =
             document.createElement("button");
 
-
         button.type = "button";
-
 
         button.className = `
             w-full flex items-center gap-3
@@ -748,7 +755,6 @@ function renderSidebar() {
             border transition-all duration-200
             group
         `;
-
 
         if (isActive) {
 
@@ -776,7 +782,6 @@ function renderSidebar() {
         const numberDiv =
             document.createElement("div");
 
-
         numberDiv.className = `
             w-9 h-9 shrink-0
             rounded-lg
@@ -784,29 +789,27 @@ function renderSidebar() {
             text-sm font-bold
         `;
 
+        if (isCompleted) {
 
- if (isCompleted) {
+            numberDiv.classList.add(
+                "bg-emerald-500",
+                "text-white"
+            );
 
-    numberDiv.classList.add(
-        "bg-emerald-500",
-        "text-white"
-    );
+            if (
+                justCompletedStepId === step.id
+            ) {
 
+                numberDiv.classList.add(
+                    "sidebar-check-pop"
+                );
 
-    if (
-        justCompletedStepId === step.id
-    ) {
+            }
 
-        numberDiv.classList.add(
-            "sidebar-check-pop"
-        );
+            numberDiv.innerHTML =
+                `<i class="fa-solid fa-check"></i>`;
 
-    }
-
-
-    numberDiv.innerHTML =
-        `<i class="fa-solid fa-check"></i>`;
-} else if (isActive) {
+        } else if (isActive) {
 
             numberDiv.classList.add(
                 "bg-blue-600",
@@ -836,30 +839,23 @@ function renderSidebar() {
         const contentDiv =
             document.createElement("div");
 
-
         contentDiv.className =
             "min-w-0 flex-1";
-
 
         const title =
             document.createElement("span");
 
-
         title.className =
             "block text-sm font-semibold truncate";
-
 
         title.textContent =
             step.title;
 
-
         const status =
             document.createElement("span");
 
-
         status.className =
             "block text-xs mt-0.5 text-slate-400";
-
 
         if (isCompleted) {
 
@@ -894,7 +890,6 @@ function renderSidebar() {
 
         }
 
-
         contentDiv.appendChild(title);
 
         contentDiv.appendChild(status);
@@ -909,36 +904,36 @@ function renderSidebar() {
         // =================================================
 
         button.addEventListener(
-    "click",
-    () => {
+            "click",
+            () => {
 
-        activeStepId = step.id;
+                activeStepId = step.id;
 
-        renderSidebar();
-justCompletedStepId = null;
+                renderSidebar();
 
-        renderCurrentStep();
+                justCompletedStepId = null;
 
-        scrollToStep();
+                renderCurrentStep();
 
-    }
-);
+                scrollToStep();
+
+            }
+        );
 
 
+        if (isActive) {
 
-if (isActive) {
+            setTimeout(() => {
 
-    setTimeout(() => {
+                button.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "start"
+                });
 
-        button.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "start"
-        });
+            }, 50);
 
-    }, 50);
-
-}
+        }
 
         sidebarSteps.appendChild(button);
 
@@ -963,23 +958,22 @@ stepCompleteBtn.addEventListener(
             return;
         }
 
+        completedSteps.push(
+            activeStepId
+        );
 
-     completedSteps.push(
-    activeStepId
-);
+        justCompletedStepId =
+            activeStepId;
 
-justCompletedStepId =
-    activeStepId;
-
-showStepCompletionToast();
+        showStepCompletionToast();
 
         // Play completion sound
+
         completeSound.currentTime = 0;
 
         completeSound
             .play()
             .catch(() => {});
-
 
         localStorage.setItem(
             "linkedinCompletedSteps",
@@ -987,7 +981,6 @@ showStepCompletionToast();
                 completedSteps
             )
         );
-
 
         renderSidebar();
 
@@ -997,6 +990,8 @@ showStepCompletionToast();
 
     }
 );
+
+
 // =========================================================
 // SHOW INCOMPLETE STEPS MODAL
 // =========================================================
@@ -1009,16 +1004,13 @@ function showIncompleteStepsModal() {
                 !completedSteps.includes(step.id)
         );
 
-
     if (incompleteSteps.length === 0) {
         return;
     }
 
-
     // Clear previous list
 
     remainingStepsList.innerHTML = "";
-
 
     // Render remaining steps
 
@@ -1026,7 +1018,6 @@ function showIncompleteStepsModal() {
 
         const stepItem =
             document.createElement("button");
-
 
         stepItem.type = "button";
 
@@ -1041,7 +1032,6 @@ function showIncompleteStepsModal() {
             hover:border-blue-200
             hover:bg-blue-50
         `;
-
 
         stepItem.innerHTML = `
 
@@ -1076,7 +1066,6 @@ function showIncompleteStepsModal() {
             ></i>
         `;
 
-
         stepItem.addEventListener(
             "click",
             () => {
@@ -1088,13 +1077,11 @@ function showIncompleteStepsModal() {
             }
         );
 
-
         remainingStepsList.appendChild(
             stepItem
         );
 
     });
-
 
     // Show modal
 
@@ -1111,6 +1098,8 @@ function showIncompleteStepsModal() {
     );
 
 }
+
+
 // =========================================================
 // CLOSE INCOMPLETE STEPS MODAL
 // =========================================================
@@ -1130,6 +1119,8 @@ function closeIncompleteStepsModal() {
     );
 
 }
+
+
 // =========================================================
 // GO TO STEP
 // =========================================================
@@ -1145,6 +1136,8 @@ function goToStep(stepId) {
     scrollToStep();
 
 }
+
+
 // =========================================================
 // NEXT STEP
 // =========================================================
@@ -1164,53 +1157,53 @@ nextStepBtn.addEventListener(
         // LAST STEP
         // =================================================
 
-    if (
-    currentIndex ===
-    steps.length - 1
-) {
+        if (
+            currentIndex ===
+            steps.length - 1
+        ) {
 
-    // =================================================
-    // CHECK ALL STEPS BEFORE FINISHING
-    // =================================================
+            // =================================================
+            // CHECK ALL STEPS BEFORE FINISHING
+            // =================================================
 
-    const incompleteSteps =
-        steps.filter(
-            step =>
-                !completedSteps.includes(
-                    step.id
-                )
-        );
-
-
-    // If there are incomplete steps
-
-    if (incompleteSteps.length > 0) {
-
-        // Give visual feedback on current button
-
-        shakeButton(
-            stepCompleteBtn
-        );
+            const incompleteSteps =
+                steps.filter(
+                    step =>
+                        !completedSteps.includes(
+                            step.id
+                        )
+                );
 
 
-        // Show clear explanation
+            // If there are incomplete steps
 
-        showIncompleteStepsModal();
+            if (incompleteSteps.length > 0) {
 
-        return;
+                // Give visual feedback on current button
 
-    }
+                shakeButton(
+                    stepCompleteBtn
+                );
 
 
-    // =================================================
-    // ALL STEPS COMPLETED
-    // =================================================
+                // Show clear explanation
 
-    showCompletionGift();
+                showIncompleteStepsModal();
 
-    return;
+                return;
 
-}
+            }
+
+
+            // =================================================
+            // ALL STEPS COMPLETED
+            // =================================================
+
+            showCompletionGift();
+
+            return;
+
+        }
 
 
         // =================================================
@@ -1219,7 +1212,6 @@ nextStepBtn.addEventListener(
 
         activeStepId =
             steps[currentIndex + 1].id;
-
 
         renderSidebar();
 
@@ -1269,18 +1261,14 @@ function updateProgress() {
             (completed / total) * 100
         );
 
-
     progressBar.style.width =
         `${percentage}%`;
-
 
     progressText.textContent =
         `${percentage}%`;
 
-
     sidebarCounter.textContent =
         `${completed} / ${total}`;
-
 
     if (score) {
 
@@ -1288,7 +1276,6 @@ function updateProgress() {
             percentage;
 
     }
-
 
     if (percentage === 100) {
 
@@ -1299,7 +1286,6 @@ function updateProgress() {
         progressBar.classList.remove(
             "bg-blue-600"
         );
-
 
         if (!giftOpened) {
 
@@ -1333,6 +1319,7 @@ function updateProgress() {
 function showCompletionGift() {
 
     // Generate certificate ID once
+
     generateCertificateId();
 
     completionOverlay.classList.remove("hidden");
@@ -1346,7 +1333,9 @@ function showCompletionGift() {
     document.body.classList.add(
         "overflow-hidden"
     );
+
 }
+
 
 // =========================================================
 // OPEN GIFT
@@ -1358,9 +1347,7 @@ function openGift() {
         return;
     }
 
-
     giftOpened = true;
-
 
     giftSound.currentTime = 0;
 
@@ -1368,18 +1355,14 @@ function openGift() {
         .play()
         .catch(() => {});
 
-
     giftBox.classList.add(
         "scale-110"
     );
 
-
     giftHint.textContent =
         "Opening your reward...";
 
-
     createConfetti();
-
 
     setTimeout(() => {
 
@@ -1390,7 +1373,6 @@ function openGift() {
         successMessage.classList.remove(
             "hidden"
         );
-
 
         if (successParticipantName) {
 
@@ -1436,9 +1418,7 @@ function createConfetti() {
         "#ec4899"
     ];
 
-
     const count = 80;
-
 
     for (
         let i = 0;
@@ -1449,7 +1429,6 @@ function createConfetti() {
         const confetti =
             document.createElement("div");
 
-
         confetti.className = `
             fixed top-0
             w-2 h-3
@@ -1457,22 +1436,17 @@ function createConfetti() {
             pointer-events-none
         `;
 
-
         const size =
             Math.random() * 8 + 5;
-
 
         confetti.style.left =
             `${Math.random() * 100}vw`;
 
-
         confetti.style.width =
             `${size}px`;
 
-
         confetti.style.height =
             `${size * 1.5}px`;
-
 
         confetti.style.background =
             colors[
@@ -1482,12 +1456,10 @@ function createConfetti() {
                 )
             ];
 
-
         confetti.style.borderRadius =
             Math.random() > 0.5
                 ? "50%"
                 : "2px";
-
 
         confetti.animate(
             [
@@ -1514,11 +1486,9 @@ function createConfetti() {
             }
         );
 
-
         document.body.appendChild(
             confetti
         );
-
 
         setTimeout(
             () => {
@@ -1543,7 +1513,6 @@ function scrollToStep() {
     const isMobile =
         window.innerWidth <= 640;
 
-
     if (isMobile) {
 
         stepPanel.scrollIntoView({
@@ -1566,6 +1535,7 @@ function scrollToStep() {
 // =========================================================
 // CERTIFICATE
 // =========================================================
+
 certificateBtn.addEventListener(
     "click",
     () => {
@@ -1588,6 +1558,8 @@ certificateBtn.addEventListener(
 
     }
 );
+
+
 // =========================================================
 // CLOSE CERTIFICATE
 // =========================================================
@@ -1619,88 +1591,186 @@ downloadCertificate.addEventListener(
         const originalText =
             downloadCertificate.innerHTML;
 
-
         downloadCertificate.innerHTML = `
             <i class="fa-solid fa-spinner fa-spin"></i>
             Preparing Certificate...
         `;
 
-
-        downloadCertificate.disabled =
-            true;
-
+        downloadCertificate.disabled = true;
 
         try {
+
+            // Make sure certificate data is updated
+
+            generateCertificateId();
+
+            certificateParticipantName.textContent =
+                participantName;
+
+            certificateIdDisplay.textContent =
+                certificateId;
+
+
+            // =====================================================
+            // WAIT FOR CERTIFICATE IMAGES
+            // =====================================================
+
+            const images =
+                certificate.querySelectorAll("img");
+
+            await Promise.all(
+                Array.from(images).map(img => {
+
+                    if (img.complete) {
+                        return Promise.resolve();
+                    }
+
+                    return new Promise(resolve => {
+
+                        img.onload = resolve;
+                        img.onerror = resolve;
+
+                    });
+
+                })
+            );
+
+
+            // =====================================================
+            // HIGH QUALITY CANVAS
+            // =====================================================
 
             const canvas =
                 await html2canvas(
                     certificate,
                     {
-                        scale: 2,
+                        scale: 4,
                         useCORS: true,
-                        backgroundColor: "#ffffff"
+                        allowTaint: false,
+                        backgroundColor: "#ffffff",
+                        logging: false,
+                        imageTimeout: 15000,
+                        scrollX: 0,
+                        scrollY: 0
                     }
                 );
 
+
+            // =====================================================
+            // CREATE A4 LANDSCAPE PDF
+            // =====================================================
+
+            const {
+                jsPDF
+            } = window.jspdf;
+
+            const pdf =
+                new jsPDF({
+                    orientation: "landscape",
+                    unit: "mm",
+                    format: "a4",
+                    compress: true
+                });
+
+            const pageWidth =
+                pdf.internal.pageSize.getWidth();
+
+            const pageHeight =
+                pdf.internal.pageSize.getHeight();
+
+
+            // =====================================================
+            // KEEP ORIGINAL ASPECT RATIO
+            // =====================================================
+
+            const canvasRatio =
+                canvas.width / canvas.height;
+
+            const pageRatio =
+                pageWidth / pageHeight;
+
+            let pdfWidth;
+            let pdfHeight;
+            let x;
+            let y;
+
+            if (canvasRatio > pageRatio) {
+
+                pdfWidth = pageWidth;
+
+                pdfHeight =
+                    pageWidth / canvasRatio;
+
+                x = 0;
+
+                y =
+                    (pageHeight - pdfHeight) / 2;
+
+            } else {
+
+                pdfHeight = pageHeight;
+
+                pdfWidth =
+                    pageHeight * canvasRatio;
+
+                x =
+                    (pageWidth - pdfWidth) / 2;
+
+                y = 0;
+
+            }
+
+
+            // =====================================================
+            // EXPORT AS HIGH-QUALITY PNG
+            // =====================================================
 
             const imageData =
                 canvas.toDataURL(
                     "image/png"
                 );
 
-
-            const {
-                jsPDF
-            } = window.jspdf;
-
-
-            const pdf =
-                new jsPDF({
-                    orientation: "landscape",
-                    unit: "mm",
-                    format: "a4"
-                });
-
-
-            const pageWidth =
-                pdf.internal.pageSize.getWidth();
-
-
-            const pageHeight =
-                pdf.internal.pageSize.getHeight();
-
-
             pdf.addImage(
                 imageData,
                 "PNG",
-                0,
-                0,
-                pageWidth,
-                pageHeight
+                x,
+                y,
+                pdfWidth,
+                pdfHeight,
+                undefined,
+                "FAST"
             );
 
 
-          const safeName =
-    participantName
-        .replace(
-            /[^a-z0-9]/gi,
-            "-"
-        )
-        .replace(
-            /-+/g,
-            "-"
-        )
-        .replace(
-            /^-|-$/g,
-            ""
-        );
+            // =====================================================
+            // FILE NAME
+            // =====================================================
 
-const shortCertificateId =
-    certificateId.split("-").pop();
+            const safeName =
+                participantName
+                    .replace(
+                        /[^a-z0-9]/gi,
+                        "-"
+                    )
+                    .replace(
+                        /-+/g,
+                        "-"
+                    )
+                    .replace(
+                        /^-|-$/g,
+                        ""
+                    );
 
-pdf.save(
-    `${safeName}-LinkedIn-Workshop-${shortCertificateId}.pdf`
-);
+            const shortCertificateId =
+                certificateId
+                    .split("-")
+                    .pop();
+
+            pdf.save(
+                `${safeName}-LinkedIn-Workshop-${shortCertificateId}.pdf`
+            );
+
+
         } catch (error) {
 
             console.error(
@@ -1708,11 +1778,9 @@ pdf.save(
                 error
             );
 
-
             alert(
                 "Sorry, we couldn't generate the certificate. Please try again."
             );
-
 
         } finally {
 
@@ -1731,17 +1799,16 @@ pdf.save(
 // =========================================================
 // EVENTS
 // =========================================================
+
 closeIncompleteSteps.addEventListener(
     "click",
     closeIncompleteStepsModal
 );
 
-
 stayOnStepBtn.addEventListener(
     "click",
     closeIncompleteStepsModal
 );
-
 
 goToIncompleteStep.addEventListener(
     "click",
@@ -1755,11 +1822,9 @@ goToIncompleteStep.addEventListener(
                     )
             );
 
-
         if (!firstIncompleteStep) {
             return;
         }
-
 
         closeIncompleteStepsModal();
 
@@ -1769,16 +1834,18 @@ goToIncompleteStep.addEventListener(
 
     }
 );
+
 giftBox.addEventListener(
     "click",
     openGift
 );
 
-
 closeCompletion.addEventListener(
     "click",
     closeCompletionGift
 );
+
+
 // =========================================================
 // OPEN RESET MODAL
 // =========================================================
@@ -1797,6 +1864,8 @@ resetWorkshopBtn.addEventListener(
 
     }
 );
+
+
 // =========================================================
 // CANCEL RESET
 // =========================================================
@@ -1815,6 +1884,8 @@ cancelResetBtn.addEventListener(
 
     }
 );
+
+
 // =========================================================
 // CONFIRM RESET
 // =========================================================
@@ -1824,24 +1895,26 @@ confirmResetBtn.addEventListener(
     () => {
 
         // Clear saved progress
-       localStorage.removeItem(
-    "linkedinCompletedSteps"
-);
 
-localStorage.removeItem(
-    "certificateId"
-);
+        localStorage.removeItem(
+            "linkedinCompletedSteps"
+        );
 
-completedSteps = [];
+        localStorage.removeItem(
+            "certificateId"
+        );
 
-certificateId = "";
+        completedSteps = [];
 
-activeStepId = 1;
+        certificateId = "";
 
-giftOpened = false;
+        activeStepId = 1;
+
+        giftOpened = false;
 
 
         // Close reset modal
+
         resetModal.classList.add("hidden");
 
         resetModal.classList.remove(
@@ -1852,12 +1925,14 @@ giftOpened = false;
 
 
         // Reset completion UI
+
         giftStage.classList.remove("hidden");
 
         successMessage.classList.add("hidden");
 
 
         // Update workshop
+
         renderSidebar();
 
         renderCurrentStep();
@@ -1866,14 +1941,19 @@ giftOpened = false;
 
 
         // Scroll to first step
+
         scrollToStep();
 
     }
 );
+
+
 closeStepCompletionToast.addEventListener(
     "click",
     hideStepCompletionToast
 );
+
+
 // =========================================================
 // INITIAL RENDER
 // =========================================================
