@@ -1961,3 +1961,22 @@ closeStepCompletionToast.addEventListener(
 renderSidebar();
 
 updateProgress();
+
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", function () {
+        const isHidden = mobileMenu.classList.contains("hidden");
+
+        if (isHidden) {
+            mobileMenu.classList.remove("hidden");
+            mobileMenuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            mobileMenuBtn.setAttribute("aria-expanded", "true");
+        } else {
+            mobileMenu.classList.add("hidden");
+            mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            mobileMenuBtn.setAttribute("aria-expanded", "false");
+        }
+    });
+}

@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content</title>
+    <link rel="icon" type="image/jpeg" href="./assets/images/maria.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+    <site-header></site-header>
+
+    <section class="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-32 text-slate-900 border-b border-slate-200">
+        
+        <!-- Subtle Grid & Soft Glow Background Effects -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f015_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f015_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        <div class="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl"></div>
+
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-8">
+                
+                <!-- Left Column: Primary Content -->
+                <div class="flex flex-col items-start text-left lg:col-span-7">
+                    
+                    <!-- Presenter Badge -->
+                    <div class="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-slate-100/80 px-4 py-1.5 backdrop-blur-md shadow-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+                        <span class="text-xs sm:text-sm font-medium text-slate-700">
+                            Presented by <span class="text-amber-600 font-semibold">Maria Anwar Zourob</span>
+                        </span>
+                        <span class="text-slate-400">•</span>
+                        <time datetime="2026-07-25" class="text-xs text-slate-500">Jul 25, 2026</time>
+                    </div>
+
+                    <!-- Main Title -->
+                    <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Refactor Your <br class="hidden sm:inline" />
+                        <span class="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 bg-clip-text text-transparent">
+                            LinkedIn Profile
+                        </span>
+                    </h1>
+
+                    <!-- Subtitle / Tagline -->
+                    <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+                        Optimize your professional presence with developer-centric strategies: Build your brand, expand your technical network, and unlock high-impact career opportunities.
+                    </p>
+
+                    <!-- Core Value Pillars -->
+                    <div class="mt-6 flex flex-wrap gap-2 sm:gap-3">
+                        <div class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-100/70 px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 shadow-sm">
+                            <svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            Build Your Brand
+                        </div>
+                        <div class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-100/70 px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 shadow-sm">
+                            <svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            Grow Your Network
+                        </div>
+                        <div class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-100/70 px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 shadow-sm">
+                            <svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Create Opportunities
+                        </div>
+                    </div>
+
+                    <!-- Call To Actions -->
+<div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+    <a href="#section-about-video" class="inline-flex justify-center items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-blue-600/20 transition-all hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+        <span>Explore Workshop Details</span>
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+    </a>
+</div>
+
+                </div>
+
+                <!-- Right Column: Visual Component Card -->
+                <div class="relative lg:col-span-5 flex justify-center items-center mt-8 lg:mt-0">
+                    <div class="relative w-full max-w-md">
+                        
+                        <!-- Main Card Frame -->
+                        <div class="relative rounded-2xl border border-slate-200 bg-white/90 p-6 sm:p-8 shadow-xl backdrop-blur-xl">
+                            
+                            <!-- Card Header -->
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-blue-600"></span>
+                                    <span class="text-xs font-mono tracking-wider text-slate-500 uppercase">Interactive Session</span>
+                                </div>
+                                <span class="rounded bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-600 border border-blue-200">
+                                    LinkedIn
+                                </span>
+                            </div>
+
+                            <!-- Card Content -->
+                            <div class="py-6 text-center">
+                                <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 border border-blue-100 text-blue-600 shadow-inner">
+                                    <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-1.16.89-2.07 2.05-2.07s2.05.91 2.05 2.07v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="mt-4 text-xl font-bold text-slate-900">Profile Refactoring Guide</h3>
+                                <p class="mt-2 text-xs text-slate-500 leading-relaxed">
+                                    Transform your profile into a developer portfolio that effectively highlights code quality, system architecture, and technical projects.
+                                </p>
+                            </div>
+
+                            <!-- Card Specs -->
+                            <div class="grid grid-cols-2 gap-3 border-t border-slate-100 pt-4 text-left">
+                                <div class="rounded-lg bg-slate-50 p-2.5 border border-slate-100">
+                                    <span class="block text-[10px] text-slate-400 uppercase font-mono">Focus Area</span>
+                                    <span class="text-xs font-semibold text-slate-800">Personal Brand</span>
+                                </div>
+                                <div class="rounded-lg bg-slate-50 p-2.5 border border-slate-100">
+                                    <span class="block text-[10px] text-slate-400 uppercase font-mono">Target Group</span>
+                                    <span class="text-xs font-semibold text-slate-800">Software Engineers</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Accent Ambient Glows -->
+                        <div class="absolute -top-3 -left-3 -z-10 h-16 w-16 rounded-xl bg-blue-500/10 blur-sm"></div>
+                        <div class="absolute -bottom-3 -right-3 -z-10 h-16 w-16 rounded-xl bg-amber-500/10 blur-sm"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+<section id="section-about-video" class="relative overflow-hidden bg-slate-50 py-12 sm:py-20 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Background Glows -->
+    <div class="pointer-events-none absolute top-1/3 left-10 h-72 w-72 rounded-full bg-blue-500/10 blur-[130px]"></div>
+    <div class="pointer-events-none absolute bottom-10 right-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto space-y-2.5 mb-10">
+            <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 shadow-sm">
+                <svg class="h-3.5 w-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                <span>About the Presenter</span>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+                Meet the Developer
+            </h2>
+            
+            <p class="text-sm sm:text-base text-slate-600 font-medium">
+                Watch a short intro about my journey, technical background, and passion for software engineering.
+            </p>
+        </div>
+
+        <!-- Main Content Grid (Side-by-Side Layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+            
+            <!-- Video Column (7 cols) -->
+            <div class="lg:col-span-7">
+                <div class="relative rounded-2xl border border-slate-200 bg-white p-2 shadow-lg backdrop-blur-xl">
+                    <!-- Responsive Video Container -->
+                    <div class="relative aspect-video w-full overflow-hidden rounded-xl bg-slate-950">
+                        <video 
+                            controls 
+                            preload="metadata"
+                            class="h-full w-full rounded-lg object-contain">
+                            <source src="/assets/videos/maria.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bio / Info Column Side-by-Side (5 cols) -->
+            <div class="lg:col-span-5">
+                <div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm space-y-4">
+                    <span class="inline-block rounded-md bg-indigo-50 px-2.5 py-0.5 text-xs font-bold font-mono text-indigo-700">
+                        Software Engineer & Backend Developer
+                    </span>
+                    
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900">
+                        Hello, I'm Maria! 👋
+                    </h3>
+                    
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        I specialize in building scalable backend architectures, RESTful APIs, and modern web applications. Passionate about continuous learning, clean architecture, and sharing tech knowledge with the community.
+                    </p>
+
+                    <!-- Key Highlights -->
+                    <div class="pt-1 space-y-2">
+                        <div class="flex items-center gap-2.5 text-xs font-semibold text-slate-700">
+                            <span class="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 text-[10px]">✓</span>
+                            <span>ASP.NET Core & Database Architecture</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-xs font-semibold text-slate-700">
+                            <span class="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 text-[10px]">✓</span>
+                            <span>Clean Code & Algorithm Design</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-xs font-semibold text-slate-700">
+                            <span class="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 text-[10px]">✓</span>
+                            <span>Technical Content & Personal Branding</span>
+                        </div>
+                    </div>
+<!-- CTA Button -->
+<div class="pt-3">
+    <a href="https://www.linkedin.com/in/maria-zourob" target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-xs font-semibold text-white shadow-md shadow-blue-600/20 transition-all duration-200 hover:bg-blue-700">
+        <svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.74a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6Z"/>
+        </svg>
+        <span>Connect on LinkedIn</span>
+    </a>
+</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Subtle Grid & Soft Glow Background Effects (Matching Hero Section) -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f015_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f015_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+    <div class="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100/80 px-3.5 py-1 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur-md">
+                <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+                <span>Personal Journey</span>
+            </div>
+            <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                My "Dev" Story: <br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 bg-clip-text text-transparent">
+                    From Social Media Skeptic to LinkedIn User
+                </span>
+            </h2>
+        </div>
+
+        <!-- Main Content Layout -->
+        <div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+            
+            <!-- Left Column: Story Timeline Cards (4 Core Points) -->
+            <div class="space-y-4 lg:col-span-7">
+                
+                <!-- Point 1: The "Anti-Social" Reality -->
+                <div class="group relative rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6 transition-all duration-300 hover:border-slate-300 hover:bg-white hover:shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:border-blue-500/30 group-hover:text-blue-600 shadow-sm transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900">The "Anti-Social" Reality</h3>
+                            <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                                I never liked social media. It felt noisy, performative, and unnecessary.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 2: The Trigger -->
+                <div class="group relative rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6 transition-all duration-300 hover:border-slate-300 hover:bg-white hover:shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:border-amber-500/30 group-hover:text-amber-600 shadow-sm transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900">The Trigger</h3>
+                            <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                                Started as a field training requirement. I was just checking a box.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 3: The Revelation -->
+                <div class="group relative rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6 transition-all duration-300 hover:border-slate-300 hover:bg-white hover:shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:border-blue-500/30 group-hover:text-blue-600 shadow-sm transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900">The Revelation</h3>
+                            <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                                LinkedIn isn't social media; it's a career repository for my work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 4: The Introvert Advantage -->
+                <div class="group relative rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6 transition-all duration-300 hover:border-slate-300 hover:bg-white hover:shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:border-emerald-500/30 group-hover:text-emerald-600 shadow-sm transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900">The Introvert Advantage</h3>
+                            <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                                It's a quiet place to show what I build, not talk about it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Visual Composition Card -->
+            <div class="relative lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md space-y-4">
+                    
+                    <!-- Top Showcase Card: Quiet Workspace Focus -->
+                    <div class="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-xl backdrop-blur-xl">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-600 border border-blue-100">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider">Dev Paradigm</h4>
+                                <p class="text-sm font-semibold text-slate-800">Code > Noise</p>
+                            </div>
+                        </div>
+
+                        <!-- Mini Visual Terminal Component (Dark Contrast Inside Light Theme) -->
+                        <div class="mt-4 rounded-xl bg-slate-900 p-4 font-mono text-xs text-slate-300 shadow-inner">
+                            <div class="flex items-center gap-1.5 pb-2 border-b border-slate-800">
+                                <span class="h-2.5 w-2.5 rounded-full bg-red-500/80"></span>
+                                <span class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></span>
+                                <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></span>
+                                <span class="ml-2 text-[10px] text-slate-500">mindset.config.ts</span>
+                            </div>
+                            <div class="mt-3 space-y-1">
+                                <p class="text-slate-500">// Old belief</p>
+                                <p class="text-red-400"><span class="text-purple-400">const</span> socialMedia = <span class="text-amber-300">"noisy & performative"</span>;</p>
+                                <p class="text-slate-500 mt-2">// The revelation</p>
+                                <p class="text-emerald-400"><span class="text-purple-400">const</span> linkedIn = <span class="text-amber-300">"career repository"</span>;</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Showcase Card: Shift Metric -->
+                    <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm border border-slate-200">
+                        <div class="flex items-center justify-between">
+                            <div class="space-y-1">
+                                <span class="text-[10px] font-mono uppercase text-slate-400">Perspective Shift</span>
+                                <p class="text-sm font-bold text-slate-800">Show What You Build</p>
+                            </div>
+                            <span class="rounded-lg bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-600 border border-emerald-200">
+                                Active Dev
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Accent Ambient Glows -->
+                    <div class="absolute -top-3 -left-3 -z-10 h-16 w-16 rounded-xl bg-blue-500/10 blur-sm"></div>
+                    <div class="absolute -bottom-3 -right-3 -z-10 h-16 w-16 rounded-xl bg-amber-500/10 blur-sm"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Subtle Grid & Soft Glow Background Effects -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f015_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f015_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+    <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[30rem] w-[30rem] rounded-full bg-blue-500/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Tag -->
+        <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100/80 px-3.5 py-1 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur-md">
+            <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+            <span>First Impressions Matter</span>
+        </div>
+
+        <div class="mt-4 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+            
+            <!-- Left Column: Core Narrative & Content -->
+            <div class="space-y-6 lg:col-span-7">
+                
+                <div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Before They Meet You... <br />
+                        <span class="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 bg-clip-text text-transparent">
+                            They Meet Your Profile
+                        </span>
+                    </h2>
+                    <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+                        Before someone reviews your code, checks your projects, or talks to you — they might check your LinkedIn first. Your profile is more than a list of skills; it's your first introduction to the developer behind the code.
+                    </p>
+                </div>
+
+                <!-- Interactive Question Grid -->
+                <div class="pt-2">
+                    <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-3">
+                        Your profile must answer 3 core questions:
+                    </span>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        
+                        <!-- Question 1 -->
+                        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 transition-all hover:border-slate-300 hover:bg-white hover:shadow-sm">
+                            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-600 border border-blue-100 mb-3">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xs font-mono uppercase text-slate-400">01. Output</h3>
+                            <p class="mt-1 text-sm font-bold text-slate-800">What do you build?</p>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 transition-all hover:border-slate-300 hover:bg-white hover:shadow-sm">
+                            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-50 text-amber-600 border border-amber-100 mb-3">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xs font-mono uppercase text-slate-400">02. Impact</h3>
+                            <p class="mt-1 text-sm font-bold text-slate-800">What have you achieved?</p>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 transition-all hover:border-slate-300 hover:bg-white hover:shadow-sm">
+                            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-100 mb-3">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xs font-mono uppercase text-slate-400">03. Value</h3>
+                            <p class="mt-1 text-sm font-bold text-slate-800">Why remember you?</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Visual Component Mockup -->
+            <div class="relative lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    
+                    <!-- Developer Persona Profile Card Representation -->
+                    <div class="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-xl backdrop-blur-xl">
+                        
+                        <!-- Top Header Simulation -->
+                        <div class="flex items-center gap-4 border-b border-slate-100 pb-5">
+                            <div class="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-slate-100 border-2 border-blue-600 text-lg font-bold text-slate-800 shadow-inner">
+                                Dev
+                                <span class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full bg-emerald-500 ring-2 ring-white"></span>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Software Engineer</h4>
+                                <p class="text-xs text-slate-500">Full Stack & Backend Developer</p>
+                                <span class="mt-1 inline-block text-[10px] font-mono text-blue-600">
+                                    linkedin.com/in/developer
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Key Takeaway Banner -->
+                        <div class="my-5 rounded-xl bg-slate-50 p-4 border border-slate-100">
+                            <span class="block text-[10px] font-mono uppercase text-slate-400">Core Identity</span>
+                            <blockquote class="mt-1 text-xs text-slate-600 italic leading-relaxed">
+                                "Your profile is the digital handshake before any technical discussion begins."
+                            </blockquote>
+                        </div>
+
+                        <!-- Status Metrics -->
+                        <div class="grid grid-cols-2 gap-3 pt-1">
+                            <div class="rounded-lg bg-slate-50 p-3 border border-slate-100 text-center">
+                                <span class="block text-[10px] font-mono text-slate-400 uppercase">First Checkpoint</span>
+                                <span class="text-xs font-semibold text-blue-600">Pre-Interview</span>
+                            </div>
+                            <div class="rounded-lg bg-slate-50 p-3 border border-slate-100 text-center">
+                                <span class="block text-[10px] font-mono text-slate-400 uppercase">Profile Role</span>
+                                <span class="text-xs font-semibold text-emerald-600">Work Repository</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Ambient Decorative Accents -->
+                    <div class="absolute -top-4 -right-4 -z-10 h-20 w-20 rounded-2xl bg-blue-500/10 blur-xl"></div>
+                    <div class="absolute -bottom-4 -left-4 -z-10 h-20 w-20 rounded-2xl bg-amber-500/10 blur-xl"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="section-5" class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Lighting & Subtle Grid Effects -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f015_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f015_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+    <div class="pointer-events-none absolute top-1/4 left-10 h-72 w-72 rounded-full bg-rose-500/10 blur-[100px]"></div>
+    <div class="pointer-events-none absolute bottom-1/4 right-10 h-72 w-72 rounded-full bg-emerald-500/10 blur-[100px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header Badge & Title -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100/80 px-3.5 py-1 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur-md">
+                <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+                <span>Code Review & Refactoring</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                README Comparison: <br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-rose-600 via-amber-600 to-emerald-600 bg-clip-text text-transparent">
+                    Bad vs. Optimized Profile
+                </span>
+            </h2>
+            
+            <p class="text-base sm:text-lg text-slate-600">
+                A side-by-side breakdown of how subtle profile improvements transform your developer visibility to recruiters.
+            </p>
+        </div>
+
+        <!-- Comparison Cards Grid -->
+        <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8 items-stretch">
+            
+            <!-- BAD / UNOPTIMIZED PROFILE CARD -->
+            <div class="relative flex flex-col justify-between rounded-2xl border border-rose-200 bg-rose-50/30 p-6 sm:p-8 backdrop-blur-xl transition-all hover:border-rose-300 hover:shadow-md">
+                <div>
+                    <!-- Card Top Header -->
+                    <div class="flex items-center justify-between border-b border-rose-100 pb-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-3 w-3 rounded-full bg-rose-500"></span>
+                            <h3 class="font-mono text-lg font-bold text-rose-700">README (Bad)</h3>
+                        </div>
+                        <span class="rounded-md bg-rose-100 px-2.5 py-1 font-mono text-xs text-rose-700 border border-rose-200">
+                            Needs Refactoring
+                        </span>
+                    </div>
+
+                    <!-- Bullet Checklist -->
+                    <ul class="space-y-4 font-mono text-sm sm:text-base text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-rose-100 text-rose-600 font-bold">✕</span>
+                            <span><strong class="text-slate-900">"Student at X University"</strong> (Generic Headline)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-rose-100 text-rose-600 font-bold">✕</span>
+                            <span>No tech stack or primary languages mentioned.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-rose-100 text-rose-600 font-bold">✕</span>
+                            <span>Generic profile picture / default blank banner.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-rose-100 text-rose-600 font-bold">✕</span>
+                            <span>Hidden potential, zero live projects linked.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Profile Preview Box (Mockup) -->
+                <div class="mt-8 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                    <div class="h-16 w-full rounded-lg bg-slate-100 mb-8 relative">
+                        <div class="absolute -bottom-5 left-4 h-12 w-12 rounded-full bg-slate-200 border-2 border-white"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="h-4 w-1/3 rounded bg-slate-200"></div>
+                        <div class="h-3 w-1/2 rounded bg-slate-100"></div>
+                        <div class="h-3 w-1/4 rounded bg-slate-100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTIMIZED PROFILE CARD -->
+            <div class="relative flex flex-col justify-between rounded-2xl border border-emerald-200 bg-emerald-50/30 p-6 sm:p-8 backdrop-blur-xl transition-all hover:border-emerald-300 shadow-sm hover:shadow-md">
+                <div>
+                    <!-- Card Top Header -->
+                    <div class="flex items-center justify-between border-b border-emerald-100 pb-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-3 w-3 rounded-full bg-emerald-500"></span>
+                            <h3 class="font-mono text-lg font-bold text-emerald-800">README (Optimized)</h3>
+                        </div>
+                        <span class="rounded-md bg-emerald-100 px-2.5 py-1 font-mono text-xs text-emerald-700 border border-emerald-200">
+                            Production Ready
+                        </span>
+                    </div>
+
+                    <!-- Bullet Checklist -->
+                    <ul class="space-y-4 font-mono text-sm sm:text-base text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-emerald-100 text-emerald-600 font-bold">✓</span>
+                            <span><strong class="text-slate-900">Backend Dev | Building Scalable APIs.</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-emerald-100 text-emerald-600 font-bold">✓</span>
+                            <span><strong>Stack:</strong> ASP.NET Core, SQL Server.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-emerald-100 text-emerald-600 font-bold">✓</span>
+                            <span>Portfolio & live repository links featured.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-emerald-100 text-emerald-600 font-bold">✓</span>
+                            <span>Clear value proposition tailored for recruiters.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Profile Preview Box (Mockup) -->
+                <div class="mt-8 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                    <div class="h-16 w-full rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 mb-8 relative flex items-center justify-end px-3">
+                        <span class="text-[10px] font-mono text-blue-100">Custom Banner</span>
+                        <div class="absolute -bottom-5 left-4 h-12 w-12 rounded-full bg-slate-800 border-2 border-emerald-500 flex items-center justify-center text-xs font-bold text-white">
+                            Dev
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <div class="h-4 w-2/5 rounded bg-slate-800"></div>
+                            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                        </div>
+                        <div class="h-3 w-4/5 rounded bg-blue-100"></div>
+                        <div class="h-3 w-2/3 rounded bg-slate-100"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="section-6" class="relative overflow-hidden bg-slate-50/50 py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Background Lighting -->
+    <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[28rem] w-[28rem] rounded-full bg-blue-500/10 blur-[130px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header Badge & Title -->
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 shadow-sm">
+                <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+                <span>STATISTICS 2026</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+                Global Scale & Opportunity
+            </h2>
+            
+            <p class="text-base sm:text-lg text-slate-600">
+                A look at the numbers driving developer recruitment and professional networking worldwide.
+            </p>
+        </div>
+
+        <!-- 4-Column Statistics Grid -->
+        <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            
+            <!-- Metric Card 1: Registered Members -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all hover:border-blue-300 hover:shadow-md">
+                <div>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                        1.3+
+                    </span>
+                    <span class="mt-1 block text-lg font-semibold text-emerald-600">
+                        Billion
+                    </span>
+                </div>
+                <div class="mt-6 border-t border-slate-100 pt-4">
+                    <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                        registered members worldwide
+                    </p>
+                </div>
+            </div>
+
+            <!-- Metric Card 2: Active Users -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all hover:border-blue-300 hover:shadow-md">
+                <div>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                        310
+                    </span>
+                    <span class="mt-1 block text-lg font-semibold text-emerald-600">
+                        Million
+                    </span>
+                </div>
+                <div class="mt-6 border-t border-slate-100 pt-4">
+                    <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                        monthly active users
+                    </p>
+                </div>
+            </div>
+
+            <!-- Metric Card 3: Companies -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all hover:border-blue-300 hover:shadow-md">
+                <div>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                        71+
+                    </span>
+                    <span class="mt-1 block text-lg font-semibold text-emerald-600">
+                        Million
+                    </span>
+                </div>
+                <div class="mt-6 border-t border-slate-100 pt-4">
+                    <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                        companies on the platform
+                    </p>
+                </div>
+            </div>
+
+            <!-- Metric Card 4: Global Presence -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all hover:border-blue-300 hover:shadow-md">
+                <div>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                        200
+                    </span>
+                    <span class="mt-1 block text-lg font-semibold text-emerald-600">
+                        Countries
+                    </span>
+                </div>
+                <div class="mt-6 border-t border-slate-100 pt-4">
+                    <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                        where LinkedIn is available
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Data Source Footnote -->
+        <div class="mt-8 text-center sm:text-left">
+            <p class="text-xs font-mono text-slate-500">
+                Sources: Official LinkedIn data and 2026 market reports
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="section-7" class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Lighting Effects -->
+    <div class="pointer-events-none absolute top-1/3 -left-20 h-80 w-80 rounded-full bg-amber-500/10 blur-[120px]"></div>
+    <div class="pointer-events-none absolute bottom-1/3 -right-20 h-80 w-80 rounded-full bg-blue-600/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Badge & Header -->
+        <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 shadow-sm">
+            <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+            <span>Discoverability & Reach</span>
+        </div>
+
+        <div class="mt-4 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+            
+            <!-- Left Column: Core Comparison Content -->
+            <div class="space-y-8 lg:col-span-7">
+                
+                <div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Personal Portfolio <br />
+                        <span class="bg-gradient-to-r from-amber-600 via-orange-600 to-blue-600 bg-clip-text text-transparent">
+                            vs. LinkedIn Profile
+                        </span>
+                    </h2>
+                    <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+                        While a personal website is a great showcase, a LinkedIn profile makes your professional identity discoverable to recruiters and networks worldwide.
+                    </p>
+                </div>
+
+                <!-- Side-by-Side Comparison Blocks -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <!-- Portfolio Card -->
+                    <div class="rounded-xl border border-amber-200 bg-amber-50/40 p-5 backdrop-blur-md shadow-sm">
+                        <div class="flex items-center gap-2 border-b border-amber-100 pb-3 mb-3">
+                            <span class="h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+                            <h3 class="font-bold text-amber-900 text-sm">Before LinkedIn: Personal Portfolio</h3>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span>Shows projects</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span>Shows skills</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-amber-800 font-medium pt-1">
+                                <svg class="h-4 w-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                <span>Requires people to find the link</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <div class="rounded-xl border border-blue-200 bg-blue-50/40 p-5 backdrop-blur-md shadow-sm">
+                        <div class="flex items-center gap-2 border-b border-blue-100 pb-3 mb-3">
+                            <span class="h-2.5 w-2.5 rounded-full bg-blue-600"></span>
+                            <h3 class="font-bold text-blue-900 text-sm">With LinkedIn: LinkedIn Profile</h3>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span>Same professional information</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span class="font-semibold text-slate-900">Easier to discover by recruiters</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span>Builds network engagement</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Highlight Quote Banner -->
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 border-l-4 border-l-blue-600 shadow-sm">
+                    <p class="text-sm sm:text-base font-semibold text-slate-800 italic">
+                        "A portfolio is a great showcase, but LinkedIn makes your professional identity discoverable."
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Visual Mockup (Portfolio / Profile Visual) -->
+            <div class="relative lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    
+                    <!-- Portfolio Preview Window Mockup -->
+                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl backdrop-blur-xl">
+                        
+                        <!-- Window Top Header -->
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                            <div class="flex items-center gap-1.5">
+                                <span class="h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+                                <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                                <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400">portfolio-vs-linkedin.dev</span>
+                        </div>
+
+                        <!-- Light Resume/Portfolio Mock Content -->
+                        <div class="space-y-4 rounded-xl bg-slate-50 p-4 border border-slate-200/80">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Brittany Chiang</h4>
+                                <p class="text-xs font-mono text-blue-600">Frontend Engineer</p>
+                                <p class="mt-2 text-[11px] text-slate-600 leading-snug">
+                                    I build accessible, pixel-perfect experiences for the web.
+                                </p>
+                            </div>
+
+                            <div class="flex gap-2 pt-1 text-slate-500">
+                                <div class="h-5 w-5 rounded bg-slate-200 flex items-center justify-center text-[10px] text-slate-700 font-medium">gh</div>
+                                <div class="h-5 w-5 rounded bg-blue-100 flex items-center justify-center text-[10px] text-blue-700 font-medium">in</div>
+                                <div class="h-5 w-5 rounded bg-slate-200 flex items-center justify-center text-[10px] text-slate-700 font-medium">tw</div>
+                            </div>
+
+                            <div class="border-t border-slate-200/80 pt-3 space-y-2">
+                                <span class="block text-[10px] font-mono text-slate-400 uppercase">Experience</span>
+                                <div class="rounded bg-white p-2 border border-slate-200 shadow-sm">
+                                    <div class="text-xs font-semibold text-slate-800">Senior Engineer</div>
+                                    <div class="text-[10px] text-slate-500">Built scalable web components & UI libraries.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Ambient Graphic Accents -->
+                    <div class="absolute -top-3 -right-3 -z-10 h-16 w-16 rounded-full bg-blue-400/20 blur-lg"></div>
+                    <div class="absolute -bottom-3 -left-3 -z-10 h-16 w-16 rounded-full bg-amber-400/20 blur-lg"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="section-8" class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Lighting & Glow Effects -->
+    <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-blue-600/5 blur-[140px]"></div>
+    <div class="pointer-events-none absolute -top-24 right-10 h-64 w-64 rounded-full bg-indigo-500/10 blur-[100px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header Badge & Title -->
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 shadow-sm">
+                <span class="flex h-2 w-2 rounded-full bg-blue-600"></span>
+                <span>Developer Architecture</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+                Why do I need a portfolio if I have LinkedIn?
+            </h2>
+            
+            <p class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent pt-1">
+                LinkedIn is Your Website
+            </p>
+        </div>
+
+        <!-- 2-Column Responsive Grid Layout (Cards) -->
+        <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+            
+            <!-- Card 1: Home Page -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 transition-all duration-200 hover:border-blue-300 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 backdrop-blur-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="rounded-lg bg-blue-100/80 px-3 py-1 font-mono text-xs font-semibold text-blue-700 border border-blue-200">
+                            /index.html
+                        </span>
+                        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-500 group-hover:text-blue-600 group-hover:border-blue-200 shadow-sm transition-colors">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 00-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        Home Page
+                    </h3>
+                    
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        <strong class="text-slate-900">Banner, Photo, Headline:</strong> Your UI/UX. The first 3 seconds of user experience.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: About Page -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 transition-all duration-200 hover:border-indigo-300 hover:bg-white hover:shadow-xl hover:shadow-indigo-500/5 backdrop-blur-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="rounded-lg bg-indigo-100/80 px-3 py-1 font-mono text-xs font-semibold text-indigo-700 border border-indigo-200">
+                            /about
+                        </span>
+                        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-500 group-hover:text-indigo-600 group-hover:border-indigo-200 shadow-sm transition-colors">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                        About Page
+                    </h3>
+                    
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        <strong class="text-slate-900">Your Story:</strong> The "About" page. Who you are beyond the code.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Projects Page -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 transition-all duration-200 hover:border-emerald-300 hover:bg-white hover:shadow-xl hover:shadow-emerald-500/5 backdrop-blur-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="rounded-lg bg-emerald-100/80 px-3 py-1 font-mono text-xs font-semibold text-emerald-700 border border-emerald-200">
+                            /projects
+                        </span>
+                        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-500 group-hover:text-emerald-600 group-hover:border-emerald-200 shadow-sm transition-colors">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                        Projects Page
+                    </h3>
+                    
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        <strong class="text-slate-900">Featured:</strong> Your showcase reel. Live links & git repositories.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4: Experience Page -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 transition-all duration-200 hover:border-amber-300 hover:bg-white hover:shadow-xl hover:shadow-amber-500/5 backdrop-blur-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="rounded-lg bg-amber-100/80 px-3 py-1 font-mono text-xs font-semibold text-amber-800 border border-amber-200">
+                            /experience
+                        </span>
+                        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-500 group-hover:text-amber-600 group-hover:border-amber-200 shadow-sm transition-colors">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
+                        Experience Page
+                    </h3>
+                    
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        <strong class="text-slate-900">Your Journey:</strong> Your professional logs and track record.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Wide Card: The Resume Endpoint -->
+        <div class="mt-6 sm:mt-8">
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 transition-all duration-200 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-500/5 backdrop-blur-xl">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="rounded-lg bg-sky-100/80 px-3 py-1 font-mono text-xs font-semibold text-sky-700 border border-sky-200">
+                                GET /api/v1/resume
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
+                            The Resume Endpoint
+                        </h3>
+                        
+                        <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                            <strong class="text-slate-900">CV/Contact:</strong> How to reach you. Your final Call-to-Action for recruiters.
+                        </p>
+                    </div>
+
+                    <div class="shrink-0">
+                        <div class="inline-flex items-center gap-2 rounded-xl bg-emerald-50 px-4 py-2 text-xs font-mono text-emerald-700 border border-emerald-200 shadow-sm">
+                            <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>200 OK — Ready for Recruiters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="section-9" class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Background Lighting -->
+    <div class="pointer-events-none absolute top-1/3 left-10 h-72 w-72 rounded-full bg-rose-500/10 blur-[120px]"></div>
+    <div class="pointer-events-none absolute bottom-1/3 right-10 h-72 w-72 rounded-full bg-amber-500/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header Badge & Title -->
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-rose-50 px-3.5 py-1 text-xs font-semibold text-rose-700 shadow-sm">
+                <svg class="h-3.5 w-3.5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span>Anti-Patterns & Pitfalls</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+                LinkedIn Mistakes Developers Make
+            </h2>
+            
+            <p class="text-base sm:text-lg text-slate-600 font-medium">
+                Would you hire this profile?
+            </p>
+        </div>
+
+        <!-- 5-Column Responsive Cards Grid -->
+        <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            
+            <!-- Mistake 1: Unprofessional Photo -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-5 backdrop-blur-xl transition-all duration-200 hover:border-rose-300 hover:bg-white hover:shadow-xl hover:shadow-rose-500/5">
+                <div>
+                    <!-- Visual Mockup -->
+                    <div class="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+                        <div class="mx-auto h-16 w-16 rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 mb-3">
+                            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <div class="h-3 w-3/4 mx-auto rounded bg-slate-200 mb-1"></div>
+                        <div class="h-2 w-1/2 mx-auto rounded bg-slate-100"></div>
+                    </div>
+                </div>
+                <div class="mt-5 border-t border-slate-200/80 pt-4">
+                    <h3 class="text-xs font-mono font-bold text-rose-600 uppercase tracking-wider mb-1">Mistake 01</h3>
+                    <p class="text-sm font-semibold text-slate-800 leading-snug">
+                        Unprofessional profile photo
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mistake 2: Generic Headline -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-5 backdrop-blur-xl transition-all duration-200 hover:border-rose-300 hover:bg-white hover:shadow-xl hover:shadow-rose-500/5">
+                <div>
+                    <!-- Visual Mockup -->
+                    <div class="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+                        <div class="mx-auto h-14 w-14 rounded-full bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-slate-500 mb-2">
+                            <span class="text-xs font-bold">Dev</span>
+                        </div>
+                        <div class="rounded bg-rose-50 border border-rose-200 px-2 py-1 text-[11px] font-mono text-rose-700">
+                            "CS Student"
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 border-t border-slate-200/80 pt-4">
+                    <h3 class="text-xs font-mono font-bold text-rose-600 uppercase tracking-wider mb-1">Mistake 02</h3>
+                    <p class="text-sm font-semibold text-slate-800 leading-snug">
+                        Headline says only "Computer Science Student"
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mistake 3: Unproven Skills -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-5 backdrop-blur-xl transition-all duration-200 hover:border-rose-300 hover:bg-white hover:shadow-xl hover:shadow-rose-500/5">
+                <div>
+                    <!-- Visual Mockup -->
+                    <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                        <div class="text-[10px] font-mono text-slate-400 uppercase mb-2">Skills (3)</div>
+                        <div class="space-y-1.5 text-xs text-slate-600">
+                            <div class="flex items-center justify-between rounded bg-slate-50 px-2 py-1 border border-slate-200">
+                                <span>Piano Playing</span>
+                                <span class="text-rose-600 font-bold">?</span>
+                            </div>
+                            <div class="flex items-center justify-between rounded bg-slate-50 px-2 py-1 border border-slate-200">
+                                <span>Drawing Animation</span>
+                                <span class="text-rose-600 font-bold">?</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 border-t border-slate-200/80 pt-4">
+                    <h3 class="text-xs font-mono font-bold text-rose-600 uppercase tracking-wider mb-1">Mistake 03</h3>
+                    <p class="text-sm font-semibold text-slate-800 leading-snug">
+                        Skills listed with no proof (Projects, Experience, Certifications)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mistake 4: Inactive Profile -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-5 backdrop-blur-xl transition-all duration-200 hover:border-rose-300 hover:bg-white hover:shadow-xl hover:shadow-rose-500/5">
+                <div>
+                    <!-- Visual Mockup -->
+                    <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-mono text-slate-400 uppercase">Activity</span>
+                            <span class="text-[10px] font-mono text-rose-600 font-semibold">2mo ago</span>
+                        </div>
+                        <div class="rounded bg-slate-50 p-2 border border-slate-200">
+                            <div class="h-2 w-3/4 rounded bg-slate-200 mb-1"></div>
+                            <div class="h-2 w-1/2 rounded bg-slate-100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 border-t border-slate-200/80 pt-4">
+                    <h3 class="text-xs font-mono font-bold text-rose-600 uppercase tracking-wider mb-1">Mistake 04</h3>
+                    <p class="text-sm font-semibold text-slate-800 leading-snug">
+                        Inactive profile (No updates for months)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mistake 5: Emoji Overuse -->
+            <div class="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-5 backdrop-blur-xl transition-all duration-200 hover:border-rose-300 hover:bg-white hover:shadow-xl hover:shadow-rose-500/5 sm:col-span-2 lg:col-span-1">
+                <div>
+                    <!-- Visual Mockup -->
+                    <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                        <div class="text-[10px] font-mono text-slate-400 uppercase mb-2">Project Post</div>
+                        <div class="text-xs text-amber-700 font-semibold leading-snug break-all font-mono bg-amber-50 p-2 rounded border border-amber-200">
+                            🚀🔥💻✨ UI/UX Design Collection 🎨✨⚡️
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 border-t border-slate-200/80 pt-4">
+                    <h3 class="text-xs font-mono font-bold text-rose-600 uppercase tracking-wider mb-1">Mistake 05</h3>
+                    <p class="text-sm font-semibold text-slate-800 leading-snug">
+                        Overusing emojis and symbols in posts or project descriptions
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Takeaway Banner -->
+        <div class="mt-12 rounded-2xl border border-blue-200 bg-blue-50/50 p-6 sm:p-8 backdrop-blur-md text-center shadow-lg shadow-blue-500/5">
+            <blockquote class="text-base sm:text-xl font-medium text-slate-700 leading-relaxed max-w-4xl mx-auto">
+                "Your LinkedIn profile isn't just a resume... <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent font-bold">it's your professional brand.</span> Every section should help others understand who you are, what you can do, and why they should trust your work."
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="section-10" class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Background Glows -->
+    <div class="pointer-events-none absolute top-1/4 right-10 h-80 w-80 rounded-full bg-blue-500/10 blur-[130px]"></div>
+    <div class="pointer-events-none absolute bottom-10 left-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header Badge & Title -->
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3.5 py-1 text-xs font-semibold text-indigo-700 shadow-sm">
+                <svg class="h-3.5 w-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+                <span>Developer Personal Branding</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+                Content Creation for Developers
+            </h2>
+            
+            <p class="text-xl font-semibold bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent">
+                You Don’t Have to Be an Expert to Share
+            </p>
+        </div>
+
+        <!-- 2-Column Grid Layout -->
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Left Column: What Can You Share? (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-6 border-b border-slate-200 pb-4">
+                        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-mono text-sm font-bold">?</span>
+                        What Can You Share?
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Item 1: What I Learned -->
+                        <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-blue-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">What I Learned</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Share something new you learned today.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Problem I Solved -->
+                        <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-indigo-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-indigo-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Problem I Solved</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Explain a challenge you faced and how you fixed it.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Concept Explained -->
+                        <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Concept Explained</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Break down a technical concept you understood.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Project Showcase -->
+                        <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-amber-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-amber-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Project Showcase</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Share your projects and what you built.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 5: Book Reviews -->
+                        <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-sky-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Book Reviews</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Share your thoughts from technical books like <em>Clean Code</em>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Make Your Posts More Valuable (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-6 border-b border-slate-200 pb-4">
+                        <svg class="h-5 w-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        Make Your Posts More Valuable
+                    </h3>
+
+                    <!-- Comparison Block -->
+                    <div class="space-y-4">
+                        <!-- Bad Example -->
+                        <div class="rounded-xl border border-rose-200 bg-rose-50/70 p-4">
+                            <span class="text-xs font-mono font-bold text-rose-700 uppercase tracking-wider block mb-1">
+                                Instead of:
+                            </span>
+                            <p class="text-sm font-semibold text-slate-700 italic">
+                                "I learned React"
+                            </p>
+                        </div>
+
+                        <!-- Good Example -->
+                        <div class="rounded-xl border border-emerald-200 bg-emerald-50/70 p-4">
+                            <span class="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider block mb-1">
+                                Write:
+                            </span>
+                            <p class="text-sm font-medium text-slate-800 leading-relaxed">
+                                "Today I learned how React handles state management, and I built a small project to practice it."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Callout Banner -->
+                <div class="mt-8 rounded-xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-blue-50 p-5 text-center shadow-sm">
+                    <p class="text-base font-bold text-indigo-900">
+                        Don’t just share what you learned... <br class="hidden sm:inline" />
+                        <span class="text-indigo-700 underline decoration-indigo-400 underline-offset-4">share your journey.</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section  class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Lighting Effects -->
+    <div class="pointer-events-none absolute top-1/4 left-10 h-80 w-80 rounded-full bg-emerald-500/10 blur-[130px]"></div>
+    <div class="pointer-events-none absolute bottom-10 right-10 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header Badge & Title -->
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-semibold text-emerald-700 shadow-sm">
+                <svg class="h-3.5 w-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <span>Platform Mechanics</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+                The LinkedIn Algorithm Basics
+            </h2>
+            
+            <p class="text-base sm:text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+                LinkedIn rewards people who create real value and build connections.
+            </p>
+        </div>
+
+        <!-- 2-Column Grid: What LinkedIn Loves vs Doesn't Like -->
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            
+            <!-- Left Column: LinkedIn Loves -->
+            <div class="flex flex-col justify-between rounded-2xl border border-emerald-200 bg-emerald-50/40 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                <div>
+                    <h3 class="text-xl font-bold text-emerald-800 flex items-center gap-2.5 mb-6 border-b border-emerald-200 pb-4">
+                        <svg class="h-6 w-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        LinkedIn Loves:
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Item 1: Consistency -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Consistency</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Post regularly and stay active.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Meaningful Comments -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Meaningful Comments</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Start conversations, not just likes.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Original Content -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Original Content</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Share your own experiences and insights.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Engagement -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Engagement</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Reply and interact with your network.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: LinkedIn Doesn't Like -->
+            <div class="flex flex-col justify-between rounded-2xl border border-rose-200 bg-rose-50/40 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                <div>
+                    <h3 class="text-xl font-bold text-rose-800 flex items-center gap-2.5 mb-6 border-b border-rose-200 pb-4">
+                        <svg class="h-6 w-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        LinkedIn Doesn't Like:
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Item 1: Copying content -->
+                        <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 transition-all duration-200 hover:border-rose-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-800">
+                                    Copying content without adding your perspective
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Being inactive -->
+                        <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 transition-all duration-200 hover:border-rose-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-800">
+                                    Being inactive for long periods
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Posting without value -->
+                        <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 transition-all duration-200 hover:border-rose-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-800">
+                                    Posting without a clear value or message
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Takeaway Banner -->
+        <div class="mt-12 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50 via-slate-50 to-indigo-50 p-6 sm:p-8 text-center shadow-sm">
+            <blockquote class="text-base sm:text-xl font-medium text-slate-700 leading-relaxed max-w-4xl mx-auto">
+                <span class="text-slate-500 font-semibold">Remember:</span> LinkedIn is not about posting more... <br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent font-extrabold">it's about creating better conversations.</span>
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+
+<section id="section-how-to-write-posts" class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Background Pattern Overlay -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-white to-white z-10"></div>
+        <div class="h-full w-full bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-60"></div>
+    </div>
+
+    <!-- Ambient Background Glows -->
+    <div class="pointer-events-none absolute top-10 left-1/4 h-80 w-80 rounded-full bg-amber-500/10 blur-[140px]"></div>
+    <div class="pointer-events-none absolute bottom-10 right-1/4 h-80 w-80 rounded-full bg-blue-500/10 blur-[130px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <div class="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3.5 py-1 text-xs font-semibold text-amber-700 shadow-sm">
+                <svg class="h-3.5 w-3.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+                <span>Content Creation Guide</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+                How to Write Posts on LinkedIn
+            </h2>
+            
+            <p class="text-base sm:text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+                Follow these simple, effective steps to craft authentic tech posts that engage your audience.
+            </p>
+        </div>
+
+        <!-- 2-Column Grid of Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            
+            <!-- Step 1 -->
+            <div class="group relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-amber-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 border border-amber-200 text-2xl shadow-sm transition-transform duration-200 group-hover:scale-110">
+                        🧠
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-amber-600">
+                            Start with your own thoughts
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Write everything that's on your mind without worrying about grammar or structure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="group relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-amber-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 border border-amber-200 text-2xl shadow-sm transition-transform duration-200 group-hover:scale-110">
+                        🗣️
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-amber-600">
+                            Make it sound like you
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Read it again and remove anything that doesn't sound natural or feels too "AI-generated."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="group relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-amber-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 border border-amber-200 text-2xl shadow-sm transition-transform duration-200 group-hover:scale-110">
+                        🎯
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-amber-600">
+                            Find the main message
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Ask yourself: <span class="italic font-medium text-slate-800 block mt-1">"What do I want people to learn from this post?"</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="group relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-amber-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 border border-amber-200 text-2xl shadow-sm transition-transform duration-200 group-hover:scale-110">
+                        ✨
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-amber-600">
+                            Add your personal touch
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Include:
+                        </p>
+                        <ul class="text-xs sm:text-sm text-slate-600 space-y-1 list-disc list-inside font-medium">
+                            <li>A real experience or challenge faced</li>
+                            <li>What you learned & your opinion</li>
+                        </ul>
+                        <p class="text-xs font-semibold text-slate-500 pt-1">
+                            This is what makes the post authentic.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="group relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-amber-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 border border-amber-200 text-2xl shadow-sm transition-transform duration-200 group-hover:scale-110">
+                        🤖
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-amber-600">
+                            Use AI as an editor
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Ask ChatGPT, Gemini, or another AI tool to:
+                        </p>
+                        <ul class="text-xs sm:text-sm text-slate-600 space-y-1 list-disc list-inside font-medium">
+                            <li>Improve clarity & fix grammar</li>
+                            <li>Organize ideas & suggest better wording</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="group relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-amber-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 border border-amber-200 text-2xl shadow-sm transition-transform duration-200 group-hover:scale-110">
+                        ✅
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-amber-600">
+                            Review before publishing
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Check:
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700 font-medium pt-1">
+                            <span class="flex items-center gap-1.5"><span class="text-emerald-500">✓</span> Is hook interesting?</span>
+                            <span class="flex items-center gap-1.5"><span class="text-emerald-500">✓</span> Is it easy to read?</span>
+                            <span class="flex items-center gap-1.5"><span class="text-emerald-500">✓</span> Does it provide value?</span>
+                            <span class="flex items-center gap-1.5"><span class="text-emerald-500">✓</span> Would you read it?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section  class="relative overflow-hidden bg-white py-16 sm:py-24 text-slate-900 border-b border-slate-200">
+    
+    <!-- Ambient Lighting Effects -->
+    <div class="pointer-events-none absolute top-1/4 left-10 h-80 w-80 rounded-full bg-emerald-500/10 blur-[130px]"></div>
+    <div class="pointer-events-none absolute bottom-10 right-10 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header Badge & Title -->
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-semibold text-emerald-700 shadow-sm">
+                <svg class="h-3.5 w-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <span>Platform Mechanics</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+                The LinkedIn Algorithm Basics
+            </h2>
+            
+            <p class="text-base sm:text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+                LinkedIn rewards people who create real value and build connections.
+            </p>
+        </div>
+
+        <!-- 2-Column Grid: What LinkedIn Loves vs Doesn't Like -->
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            
+            <!-- Left Column: LinkedIn Loves -->
+            <div class="flex flex-col justify-between rounded-2xl border border-emerald-200 bg-emerald-50/40 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                <div>
+                    <h3 class="text-xl font-bold text-emerald-800 flex items-center gap-2.5 mb-6 border-b border-emerald-200 pb-4">
+                        <svg class="h-6 w-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        LinkedIn Loves:
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Item 1: Consistency -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Consistency</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Post regularly and stay active.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Meaningful Comments -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Meaningful Comments</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Start conversations, not just likes.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Original Content -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Original Content</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Share your own experiences and insights.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Engagement -->
+                        <div class="flex items-start gap-4 rounded-xl border border-emerald-100 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Engagement</h4>
+                                <p class="text-sm text-slate-600 mt-0.5">Reply and interact with your network.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: LinkedIn Doesn't Like -->
+            <div class="flex flex-col justify-between rounded-2xl border border-rose-200 bg-rose-50/40 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                <div>
+                    <h3 class="text-xl font-bold text-rose-800 flex items-center gap-2.5 mb-6 border-b border-rose-200 pb-4">
+                        <svg class="h-6 w-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        LinkedIn Doesn't Like:
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Item 1: Copying content -->
+                        <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 transition-all duration-200 hover:border-rose-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-800">
+                                    Copying content without adding your perspective
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Being inactive -->
+                        <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 transition-all duration-200 hover:border-rose-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-800">
+                                    Being inactive for long periods
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Posting without value -->
+                        <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 transition-all duration-200 hover:border-rose-300 hover:shadow-md">
+                            <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-800">
+                                    Posting without a clear value or message
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Takeaway Banner -->
+        <div class="mt-12 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50 via-slate-50 to-indigo-50 p-6 sm:p-8 text-center shadow-sm">
+            <blockquote class="text-base sm:text-xl font-medium text-slate-700 leading-relaxed max-w-4xl mx-auto">
+                <span class="text-slate-500 font-semibold">Remember:</span> LinkedIn is not about posting more... <br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent font-extrabold">it's about creating better conversations.</span>
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+
+<section  class="relative overflow-hidden bg-slate-50 py-20 sm:py-28 text-slate-900 border-b border-slate-200">
+    
+    <!-- Background Pattern Overlay -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-white via-slate-50/80 to-white z-10"></div>
+        <div class="h-full w-full bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:24px_24px] opacity-15"></div>
+    </div>
+
+    <!-- Ambient Glowing Orbs -->
+    <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[36rem] w-[36rem] rounded-full bg-blue-500/10 blur-[160px]"></div>
+    <div class="pointer-events-none absolute top-1/4 right-1/4 h-64 w-64 rounded-full bg-amber-500/10 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Central Glassmorphism Container -->
+        <div class="relative mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white/80 p-8 sm:p-14 backdrop-blur-2xl shadow-xl text-center">
+            
+            <!-- Floating Decorative Accent Element -->
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-4 py-1 text-xs font-mono font-semibold text-amber-800 shadow-sm">
+                <span>Final Takeaway</span>
+            </div>
+
+            <!-- Quote Text Content -->
+            <blockquote class="mt-4 space-y-6">
+                <p class="text-xl sm:text-2xl lg:text-3xl font-semibold leading-relaxed text-slate-800 tracking-tight">
+                    "Your next opportunity might come from a single connection, a project you shared, or a post you almost didn't publish."
+                </p>
+                
+                <p class="text-lg sm:text-xl font-medium text-slate-600">
+                    Start today. Keep learning. Keep sharing. <br class="hidden sm:inline" />
+                    <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent font-bold">See you on LinkedIn!</span>
+                </p>
+            </blockquote>
+
+            <!-- Divider Line -->
+            <div class="my-8 h-px w-24 mx-auto bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+
+            <!-- Thank You Badge & Social Action -->
+            <div class="space-y-5">
+                <span class="text-2xl sm:text-3xl font-extrabold text-amber-600 tracking-wide block">
+                    Thank You!
+                </span>
+
+                <div class="pt-1 flex flex-wrap items-center justify-center gap-4">
+                    <a href="https://www.linkedin.com/in/maria-zourob" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-600/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.74a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6Z"/>
+                        </svg>
+                        <span>Connect on LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js">
+</script>
+
+<script
+    type="module"
+    src="./components/header.js">
+</script>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
