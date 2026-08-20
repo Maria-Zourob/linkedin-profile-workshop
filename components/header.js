@@ -1,9 +1,11 @@
 class SiteHeader extends HTMLElement {
+
     constructor() {
         super();
     }
 
     connectedCallback() {
+
         this.innerHTML = `
             <header class="page-load-down sticky top-0 z-40 border-b border-slate-200 bg-white">
 
@@ -12,7 +14,9 @@ class SiteHeader extends HTMLElement {
                     <!-- Brand -->
                     <div class="flex min-w-0 items-center gap-3 sm:gap-4">
 
-                        <div class="page-scale delay-200 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-lg text-white shadow-sm sm:h-12 sm:w-12 sm:text-xl">
+                        <div
+                            class="page-scale delay-200 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-lg text-white shadow-sm sm:h-12 sm:w-12 sm:text-xl"
+                        >
                             <i class="fa-brands fa-linkedin-in"></i>
                         </div>
 
@@ -24,7 +28,11 @@ class SiteHeader extends HTMLElement {
                                     LinkedIn Profile Upgrade
                                 </h1>
 
-                                <span class="hidden rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600 sm:inline-flex">
+                                <!-- Page Badge -->
+                                <span
+                                    id="pageBadge"
+                                    class="hidden rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600 sm:inline-flex"
+                                >
                                     Workshop
                                 </span>
 
@@ -42,13 +50,22 @@ class SiteHeader extends HTMLElement {
                     <!-- Desktop Navigation -->
                     <div class="hidden items-center gap-4 md:flex">
 
+                        <!-- Dynamic Navigation Button -->
                         <a
+                            id="pageNavLink"
                             href="./content.html"
                             class="group inline-flex items-center gap-2 rounded-xl border border-blue-100 bg-blue-50 px-4 py-2.5 text-sm font-semibold text-blue-600 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-100 hover:shadow-sm"
                         >
-                            <i class="fa-solid fa-book-open transition-transform duration-300 group-hover:scale-110"></i>
 
-                            Workshop Content
+                            <i
+                                id="pageNavIcon"
+                                class="fa-solid fa-book-open transition-transform duration-300 group-hover:scale-110"
+                            ></i>
+
+                            <span id="pageNavText">
+                                Workshop Steps
+                            </span>
+
                         </a>
 
 
@@ -99,16 +116,22 @@ class SiteHeader extends HTMLElement {
                 >
 
                     <a
+                        id="mobilePageNavLink"
                         href="./content.html"
                         class="flex items-center gap-3 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-100"
                     >
 
                         <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white shadow-sm">
-                            <i class="fa-solid fa-book-open"></i>
+
+                            <i
+                                id="mobilePageNavIcon"
+                                class="fa-solid fa-book-open"
+                            ></i>
+
                         </span>
 
-                        <span>
-                            Workshop Content
+                        <span id="mobilePageNavText">
+                            Workshop Steps
                         </span>
 
                         <i class="fa-solid fa-arrow-right ml-auto text-xs"></i>
@@ -121,8 +144,13 @@ class SiteHeader extends HTMLElement {
         `;
 
         this.setupMobileMenu();
+        this.setupPageInfo();
     }
 
+
+    // =====================================================
+    // MOBILE MENU
+    // =====================================================
 
     setupMobileMenu() {
 
@@ -161,6 +189,120 @@ class SiteHeader extends HTMLElement {
         });
 
     }
+
+
+    // =====================================================
+    // PAGE INFORMATION
+    // =====================================================
+
+    setupPageInfo() {
+
+        const pageBadge = this.querySelector("#pageBadge");
+
+        const pageNavLink = this.querySelector("#pageNavLink");
+        const pageNavText = this.querySelector("#pageNavText");
+        const pageNavIcon = this.querySelector("#pageNavIcon");
+
+        const mobilePageNavLink =
+            this.querySelector("#mobilePageNavLink");
+
+        const mobilePageNavText =
+            this.querySelector("#mobilePageNavText");
+
+        const mobilePageNavIcon =
+            this.querySelector("#mobilePageNavIcon");
+
+
+        if (!pageBadge || !pageNavLink) return;
+
+
+        // Get current HTML file
+        const currentPage =
+            window.location.pathname
+                .split("/")
+                .pop()
+                .toLowerCase();
+
+
+        // =====================================================
+        // INDEX PAGE
+        // =====================================================
+
+        if (
+            currentPage === "index.html" ||
+            currentPage === ""
+        ) {
+
+            // Badge
+            pageBadge.textContent = "Workshop";
+
+
+            // Desktop button
+            pageNavLink.href = "./content.html";
+
+            pageNavText.textContent = "Workshop Steps";
+
+            pageNavIcon.className =
+                "fa-solid fa-book-open transition-transform duration-300 group-hover:scale-110";
+
+
+            // Mobile button
+            if (mobilePageNavLink) {
+                mobilePageNavLink.href = "./content.html";
+            }
+
+            if (mobilePageNavText) {
+                mobilePageNavText.textContent =
+                    "Workshop Steps";
+            }
+
+            if (mobilePageNavIcon) {
+                mobilePageNavIcon.className =
+                    "fa-solid fa-book-open";
+            }
+
+        }
+
+
+        // =====================================================
+        // CONTENT PAGE
+        // =====================================================
+
+        else if (currentPage === "content.html") {
+
+            // Badge
+            pageBadge.textContent = "Workshop Content";
+
+
+            // Desktop button
+            pageNavLink.href = "./index.html";
+
+            pageNavText.textContent = "Back to Workshop";
+
+            pageNavIcon.className =
+                "fa-solid fa-arrow-left transition-transform duration-300 group-hover:scale-110";
+
+
+            // Mobile button
+            if (mobilePageNavLink) {
+                mobilePageNavLink.href = "./index.html";
+            }
+
+            if (mobilePageNavText) {
+                mobilePageNavText.textContent =
+                    "Back to Workshop";
+            }
+
+            if (mobilePageNavIcon) {
+                mobilePageNavIcon.className =
+                    "fa-solid fa-arrow-left";
+            }
+
+        }
+
+    }
+
 }
+
 
 customElements.define("site-header", SiteHeader);
