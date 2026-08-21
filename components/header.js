@@ -131,7 +131,7 @@ class SiteHeader extends HTMLElement {
                         </span>
 
                         <span id="mobilePageNavText">
-                            Workshop content
+                            Workshop Content
                         </span>
 
                         <i class="fa-solid fa-arrow-right ml-auto text-xs"></i>
