@@ -63,7 +63,7 @@ class SiteHeader extends HTMLElement {
                             ></i>
 
                             <span id="pageNavText">
-                                Workshop Steps
+                                Workshop Content
                             </span>
 
                         </a>
@@ -131,7 +131,7 @@ class SiteHeader extends HTMLElement {
                         </span>
 
                         <span id="mobilePageNavText">
-                            Workshop Steps
+                            Workshop content
                         </span>
 
                         <i class="fa-solid fa-arrow-right ml-auto text-xs"></i>
